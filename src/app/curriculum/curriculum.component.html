@@ -1,0 +1,20 @@
+<div class="body">
+	<button id="scrollTop" class="navTop" (click)="scrollTop()"><i class="arrow up"></i></button>
+	<div class="section" *ngFor="let sem of sems">
+		<h1>{{sem.year}} <span class="part2">{{sem.sem}}</span></h1>
+		<div *ngFor="let subject of sem.subs; let i = index" [attr.data-index] = "i">
+			<button class="accordion">{{subject}}</button>
+			<div class="panel">
+				&nbsp;
+				<div class="cover" *ngFor="let book of sem.books[i]">
+		  			<img src="assets/book-prev/{{book.prev}}.jpg">
+					<div class="content" >
+						<h4 [innerHTML] = book.desp></h4>
+						<a class="btn" href="{{book.link}}" target="_blank"> Buy </a>
+						<a class="btn" href="{{book.pdf}}" target="_blank"> Pdf Download!</a>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

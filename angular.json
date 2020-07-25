@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "bnb"
+    }
+  },
+  "defaultProject": "bnb",
+  "cli": {
+    "analytics": false
+  }
 }

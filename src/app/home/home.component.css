@@ -1,0 +1,340 @@
+@keyframes down{
+	0%{
+		top: -5px;
+		left: -5px;
+	}
+	25%{
+		top: 0px;
+		left: 0px;
+	}
+	50%, 100%{
+		top: 5px;
+		left: 5px;
+	}
+}
+
+@keyframes fade{
+	0%{
+		opacity: 0;
+	}
+	25%{
+		opacity: 1;
+	}
+	50%, 100%{
+		opacity: 0;
+	}
+}
+
+@keyframes bounce{
+	0%{
+		transform: translate(0, 10px);
+		font-size: 0em;
+	}
+	50%, 100%{
+		font-size: 1em;
+		opacity: 1;
+	}
+	75%{
+		transform: translate(0, 20px);
+		font-size: 1.2em;
+		opacity: 1;
+	}
+}
+
+@keyframes popup{
+	0%{
+		font-size: 0em;
+	}
+	50%, 100%{
+		font-size: 1em;
+	}
+	75%{
+		font-size: 1.2em;
+		opacity: 1;
+	}
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+
+/* for mobile*/
+.body{
+	padding-left: 1.5vh;
+}
+h2{
+	font-size: 6em;
+}
+h3{
+	font-size: 3em;
+	margin-bottom: 20px;
+}
+a{
+	text-decoration: none;
+}
+.section{
+	font-family: Blackout-Midnight, sans-serif;
+	text-transform: uppercase;
+	transition: ease 0.1s;
+	z-index: 10;
+    overflow: hidden;
+    height: 80vh;
+    max-height: 100vw;
+    margin-top: 10vh;
+    padding-bottom: 26vh;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+.part2{
+	font-family: Blackout-2am, sans-serif;
+}
+.scrolldown{
+	width: 60px;
+	height: 60px;
+	margin:auto;
+	transform: rotate(45deg);
+}
+.scrolldown span{
+	font-size: 0.8em;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 40px;
+	height: 40px;
+	border-bottom: 2px solid #fcfcfc;
+	border-right: 2px solid #fcfcfc;
+}
+
+.scrolldown span:nth-child(1){
+	font-family: Blackout-Midnight, sans-serif;
+	text-align: center;
+	transform: rotate(-45deg);
+	border: 0px;
+	animation: down 1s linear infinite;	
+}
+
+.scrolldown span:nth-child(2){
+	transform: translate(-10px, -10px);
+	animation-delay: -0.2s;
+	animation: down 1s linear infinite, fade 1s linear infinite;
+	opacity: 0;
+}
+
+.scrolldown span:nth-child(3){
+	transform: translate(5px, 5px);
+	animation: down 1s linear infinite, fade 1s linear infinite;
+	opacity: 0;
+}
+
+.navButton{
+	position: fixed;
+	top: 50px;
+	right: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background-color: #f7f7f7;
+	transition: 0.2s;
+}
+.navButton div{
+	position: relative;
+	z-index: 5;
+    width: 20px;
+    height: 2px;
+	margin: auto;
+    background-color: #111;
+    transition: 0.4s;
+}
+.navButton div:nth-child(1){
+	top: 15px;
+}
+.navButton div:nth-child(2){
+	top: 20px;
+}
+.navButton:hover{
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.navButton:hover div:nth-child(1){
+	-webkit-transform: rotate(-45deg) translate(-2px, 2px);
+	transform: rotate(-45deg) translate(-2px, 2px);
+}
+.navButton:hover div:nth-child(2){
+	-webkit-transform: rotate(45deg) translate(-4px, -4px);
+	transform: rotate(45deg) translate(-4px, -4px);
+}
+.rotate{
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+.rotate:hover{
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+.rotate div:nth-child(1){
+	-webkit-transform: rotate(-45deg) translate(-2px, 2px);
+	transform: rotate(-45deg) translate(-2px, 2px);
+}
+.rotate div:nth-child(2){
+	-webkit-transform: rotate(45deg) translate(-4px, -4px);
+	transform: rotate(45deg) translate(-4px, -4px);
+}
+
+.menubar{
+	position: fixed;
+	z-index: 1000;
+	background-color: #1b1b1b;
+	top: 95px;
+	right: 10px;
+	width: 100px;
+	transition: 0.2s;
+	text-align: center;
+}
+.menubar div{
+	padding: 12px 0 12px 0;
+	transition: 0.7s;
+	animation: bounce 0.4s linear forwards;
+	opacity: 0;
+
+}
+.menubar div:nth-child(2){
+	animation-delay: 0.2s;
+}
+.menubar div:nth-child(3){
+	animation-delay: 0.4s;
+}
+.menubar div:nth-child(4){
+	animation-delay: 0.6s;
+}
+.menubar div:hover{
+	background-color: #fcfcfc;
+	color: #1b1b1b;
+}
+
+.menubar div a{
+	text-decoration: none;
+	color: white;
+	transition: 0.4s;
+}
+.menubar div:hover a{
+	font-size: 1em;
+	color: #1b1b1b;
+}
+.image{
+	width: 90vw; 
+	height: 50vh;
+	border-radius: 2px; 
+	max-width: 90vh;
+	background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    transition: 0.2s;
+}
+.sectionButton{
+	position: relative;
+	overflow: hidden;
+    left: 25vw;
+    bottom: 11vh;
+    z-index: 500;
+    cursor: pointer;
+
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 150px;
+    height: 150px;
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
+    -webkit-perspective-origin: 100% 50%;
+    perspective-origin: 100% 50%;
+    -webkit-transition: letter-spacing 200ms cubic-bezier(.455, .03, .427, .964);
+    transition: letter-spacing 200ms cubic-bezier(.455, .03, .427, .964);
+    font-size: 14px;
+    line-height: 1em;
+    text-align: center;
+    letter-spacing: 7px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+.sectionButton:hover{
+	font-size: 1.5em;
+}
+#ds-viz, #curriculum, #interview{
+	max-height: none;
+}
+/*@media only screen and (max-width: 767px) {
+	h2{
+		font-size: 9em;
+	}
+}*/
+
+@media only screen and (min-width: 767px) {
+	/*for desktop*/
+	.body{
+		padding-left: 10vw;	
+	}
+	h2{
+		font-size: 11em;	
+	}
+	h3{
+		font-size: 6em;
+		margin-bottom: 20px;
+	}
+	.section{
+	    height: 100vh;
+	    padding-bottom: 10vh;
+	}
+	.scrolldown{
+		width: 60px;
+		height: 60px;
+	}
+	.navButton{
+		right: 81px;
+		height: 58px;
+		width: 58px;
+	}
+	.navButton div:nth-child(1){
+		top: 24px;
+	}
+	.navButton div:nth-child(2){
+		top: 30px;
+	}
+	.menubar{
+		top: 130px;
+		width: 200px;
+	}
+	.menubar div:hover a{
+		font-size: 1.5em;
+	}
+	.image{
+		width: 60vw; 
+		height: 70vh;
+		max-width: 1536px; 
+		max-height: 1044px;
+	}
+	.sectionButton{
+		left: 55vw;
+		bottom: 40vh;
+	}
+}

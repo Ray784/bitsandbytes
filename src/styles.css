@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  scroll-behavior: smooth;
+}
+body{
+	background-color: #1B1B1B;
+	color: #fcfcfc;
+	-ms-overflow-style: none; 
+	scrollbar-width: none;
+	padding-left: 1.5vh;
+	cursor: pointer;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+@font-face {
+	font-family: Blackout-2am;
+	src: url('assets/fonts/Blackout-2am.ttf');
+}
+
+@font-face {
+	font-family: Blackout-Midnight;
+	src: url('assets/fonts/Blackout-Midnight.ttf');
+}
+@font-face {
+	font-family: Ubuntu;
+	src: url('assets/fonts/Ubuntu-Medium.ttf');
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+}
