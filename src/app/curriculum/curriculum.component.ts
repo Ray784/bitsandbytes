@@ -10,15 +10,7 @@ import {Semester} from '../semester';
 export class CurriculumComponent implements OnInit {
 
 	constructor() { 
-		window.addEventListener("scroll", function() {
-			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-			let scrollTop = document.getElementById('scrollTop');
-			if(currentScroll > 500)
-				scrollTop.style.display = 'block';
-			else
-				scrollTop.style.display = 'none';
-
-		});
+		
 	}
 
 	ngOnInit(): void {
@@ -39,10 +31,6 @@ export class CurriculumComponent implements OnInit {
 				}
 			});
 		}
-	}
-
-	scrollTop(){
-		window.scrollTo(0, 0);
 	}
 
 	first_year_1: string[] = ['Mathematics – I', 'Basic Electrical Engineering', 'Engineering Chemistry', 'English', 'Basic Electrical Engineering Lab', 'Engineering Chemistry Lab', 'English Language and Communication Skills Lab', 'Engineering Workshop']

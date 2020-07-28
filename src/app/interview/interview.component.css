@@ -1,0 +1,123 @@
+/* for mobile*/
+.body{
+  padding-left: 2vw;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.section{
+    font-family: Blackout-Midnight, sans-serif;
+    text-transform: uppercase;
+    transition: ease 0.1s;
+    z-index: 10;
+    overflow: hidden;
+    margin-top: 2vh;
+    max-width: 90vw;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.part2{
+  font-family: Blackout-2am, sans-serif;
+}
+.content{
+  margin-bottom: 20px; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+  width: 100%;
+}
+.accordion {
+  background-color: #fcfcfc;
+  color: #444;
+  font-family: Ubuntu, sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.accordion:after {
+  content: '\02795';
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+	content: "\2796";
+}
+
+img{
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin: auto;
+  padding: 0.75rem;
+  padding-bottom: 0;
+  border-radius: 0;
+}
+.btn{
+	padding: 10px;
+	background-color: #feac1a;
+	margin: 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+	font-size: 0.8em;
+	transition: 0.4s;
+}
+.btn:hover{
+	background-color: #e5a029;
+}
+.cover{
+	padding: 10px;
+}
+.active, .accordion:hover {
+	background-color: #ccc;
+}
+
+.panel {
+	padding: 0 18px;
+	font-family: Ubuntu;
+	text-transform: none;
+	font-size: 1.2em;
+	background-color: #fff;
+	color: #1b1b1b;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+
+.img-holder{
+  width: 100vw;
+  height: 200px;
+}
+@media only screen and (min-width: 767px) {
+  /*for desktop*/
+  .body{
+    padding-left: 5vw
+  }
+  .img-holder{
+    width: 200px;
+    height: 200px;
+  }
+  .content{
+    align-items: left; 
+    justify-content: left; 
+    text-align: left;
+    width: 90%;
+  }
+  img{
+    margin-left: 0.75rem;
+  }
+  .cover{ 
+  	display: flex;
+  }
+}

@@ -1,5 +1,4 @@
 <div class="body">
-	<button id="scrollTop" class="navTop" (click)="scrollTop()"><i class="arrow up"></i></button>
 	<div class="section" *ngFor="let sem of sems">
 		<h1>{{sem.year}} <span class="part2">{{sem.sem}}</span></h1>
 		<div *ngFor="let subject of sem.subs; let i = index" [attr.data-index] = "i">

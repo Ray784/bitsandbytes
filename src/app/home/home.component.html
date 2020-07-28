@@ -1,4 +1,5 @@
 <div class="body">
+	<button id="scrollTop" class="navTop" (click)="scrollTop()"><i class="arrow up"></i></button>
 	<div class="section" id="header">
 		<div id="company-head">
 			<h2>Bits <br><span class="part2">& Bytes</span></h2>
@@ -22,24 +23,24 @@
 	<div class="section" id="curriculum">
 		<h3 class="section-head head">University <span class="part2">Curriculum</span></h3>
 		<div style="background-image: url('assets/education.jpg');" class="image"></div>
-		<a><div class="sectionButton" style="background-color: #FEAC1A; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+		<a routerLink = "curriculum"><div class="sectionButton" style="background-color: #FEAC1A; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
 	</div>
 
 	<div class="section" id="ds-viz">
 		<h3 class="section-head head">DS <span class="part2">Visualisations</span></h3>
 		<div style="background-image: url('assets/datastruct.jpg');" class="image"></div>
-		<a><div class="sectionButton" style="background-color: #249CB7; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+		<a routerLink = ""><div class="sectionButton" style="background-color: #249CB7; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
 	</div>
 
 	<div class="section" id="interview">
 		<h3 class="section-head head">Interview <span class="part2">Preperation</span></h3>
 		<div style="background-image: url('assets/interview.jpg');" class="image"></div>
-		<a routerLink = "curriculum"><div class="sectionButton" style="background-color: #222A58; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+		<a routerLink = "interview"><div class="sectionButton" style="background-color: #222A58; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
 	</div>
 
 	<div class="section" id="interview">
 		<h3 class="section-head head">GATE <span class="part2">Preperation</span></h3>
 		<div style="background-image: url('assets/gate.jpg');" class="image"></div>
-		<a><div class="sectionButton" style="background-color: #2F338A; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+		<a routerLink = ""><div class="sectionButton" style="background-color: #2F338A; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
 	</div>
 </div>

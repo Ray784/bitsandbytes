@@ -95,39 +95,6 @@ img{
 	transition: max-height 0.2s ease-out;
 }
 
-.navTop{
-    position: fixed;
-    display: none;
-    background-color: #FEAC1A;
-    color: white;
-    border: none;
-    bottom: 20px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    z-index: 99;
-    padding-top: 5px;
-    border-radius: 50%;
-    font-size: 18px;
-    animation: bounce 3s infinite;
-}
-.arrow {
-	border: solid #fff;
-	border-width: 0 5px 5px 0;
-	display: inline-block;
-	padding: 5px;
-}
-
-.up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-}
-.navTop:active{
-    outline: 0;
-}
-.navTop:focus{
-    outline: 0;
-}
 .img-holder{
   width: 100vw;
   height: 200px;

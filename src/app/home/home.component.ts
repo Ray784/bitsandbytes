@@ -14,6 +14,11 @@ export class HomeComponent implements OnInit {
 		window.addEventListener("scroll", function() {
 			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 			let head = document.getElementById('company-head');
+			let scrollTop = document.getElementById('scrollTop');
+			if(currentScroll > 500)
+				scrollTop.style.display = 'block';
+			else
+				scrollTop.style.display = 'none';
 			if(currentScroll > lastScroll)
 				opacity -= 0.01;
 			else
@@ -28,7 +33,9 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit(): void {
 	}
-
+	scrollTop(){
+		window.scrollTo(0, 0);
+	}
 	showMenuBar(nav){
 		nav.classList.toggle("rotate");
 		let menu = document.getElementById('menu');

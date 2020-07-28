@@ -1,0 +1,18 @@
+<div class="body">
+	<div class="section"*ngFor="let resource of resources">
+		<h1>{{resource.title}}</h1>
+		<div >
+			<button class="accordion">{{resource.subtitle}}</button>
+			<div class="panel">
+				&nbsp;
+				<div class="cover" *ngFor="let link of resource.resource">
+		  			<img  src="assets/logo/{{link.avatar}}">
+					<div class="content" >
+						<h4 [innerHTML] = link.desp></h4>
+						<a class="btn" href="{{link.link}}" target="_blank" style=" background-color: {{link.color}}"> Click Here! </a>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
