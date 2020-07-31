@@ -1,0 +1,177 @@
+.body{
+    width: 100%;
+    height: 100%;
+}
+.section{
+    font-family: Bonus, sans-serif;
+    width: 90%;
+    text-transform: uppercase;
+    transition: ease 0.1s;
+    z-index: 10;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+}
+
+h3{
+    margin-top: 15vh;
+    font-size: 2em;
+    margin-bottom: 5vh;
+}
+.centered{
+    font-family: IBM-L8, sans-serif;
+    transition: ease 0.1s;
+    width: 70%;
+    z-index: 10;
+    overflow: hidden;
+    padding-bottom: 15vh;
+    margin: auto;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.part2{
+    color: #EE4938;
+}
+
+.navButton{
+    background-color: #3a3a3a;
+}
+
+.navButton div{
+    background-color: #fff;
+}
+
+.navButton:hover div{
+    background-color: #ee4938;
+}
+
+.menubar{
+	background-color: #fcfcfc;
+}
+
+.menubar a{
+	color: #000;
+}
+
+.menubar div:hover{
+	background-color: #d3d3d3;
+	color: #ee4938;
+}
+
+.menubar div:hover a{
+	color: #ee4938;
+}
+
+.centered{
+	width: 90vw;
+	padding: 0px;
+}
+.centered ul{
+	padding: 0;
+}
+.centered li{
+    display: block;
+    border-top: 1.5px solid #d3d3d3;
+    padding: 10px;
+    list-style: none;
+}
+
+.centered li p{
+    text-align: justify;
+    width: 81vw;
+    padding-left: 5%;
+    margin: 0px 0px 8% 0px;
+    font-size: 1.3em;
+}
+.centered li h2{
+    text-align: left;
+    padding-left: 5%;
+    margin: 8% 0px 8% 0px;
+}
+
+.centered li .image{
+	height: 100%;
+    margin-right: 2%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.image img{
+    width: auto;
+	height: auto;
+	max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    transition: 0.4s;
+}
+
+.image a:hover img{
+    opacity: 0.6;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a{
+	text-decoration: none;
+	color: #fcfcfc;
+	transition: 0.4s;
+}
+
+
+.centered li button{
+    width: 400px;
+    height: 50px;
+    margin:10px;
+    font-size: 0.98em;
+    border: 0px; 
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    font-family: Ubuntu;
+    cursor: pointer;
+    color: white;
+    transition: 0.4s;
+}
+.centered li button:hover a{
+    color: #ee4938;
+    font-size: 1.3em;
+
+}
+@media only screen and (min-width: 767px) {
+  /*for tablet and above*/
+    .section{
+        width: 70%;
+    }
+
+    h3{
+        font-size: 4em;
+        
+    }
+}
+@media only screen and (min-width: 1023px) {
+  /*for desktop*/
+	.centered li{
+	    display: flex;
+	    padding: 20px;
+	}
+	.centered li p{
+	    text-align: justify;
+	    width: 50vw;
+	    word-wrap: break-word;
+	    padding-left: 10px;
+	    margin: 0px 0px 4% 0px;
+	    font-size: 1.3em;
+	}
+	.centered li h2{
+	    text-align: left;
+	    padding-left: 10px;
+	    margin: 2% 0px 2% 0px;
+	}
+	.centered{
+		width: 80vw;
+		padding: 0px;
+	}
+}

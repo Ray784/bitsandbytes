@@ -29,6 +29,10 @@ export class HomeComponent implements OnInit {
 		    head.style.transform = "rotateY("+currentScroll/10+"deg) rotateX(-"+currentScroll/20+"deg)";
 		    head.style.opacity = ''+opacity;
 		});
+		let body = document.getElementsByTagName('body');	
+		body[0].style.backgroundColor = "#1b1b1b";
+		body[0].style.color = "#fcfcfc";
+		this.scrollTop();
 	}
 
 	ngOnInit(): void {

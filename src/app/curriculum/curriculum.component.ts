@@ -10,9 +10,14 @@ import {Semester} from '../semester';
 export class CurriculumComponent implements OnInit {
 
 	constructor() { 
-		
+		let body = document.getElementsByTagName('body');	
+		body[0].style.backgroundColor = "#fcfcfc";
+		body[0].style.color = "#3a3a3a";
+		this.scrollTop();	
 	}
-
+	scrollTop(){
+		window.scrollTo(0, 0);
+	}
 	ngOnInit(): void {
 		
 	}

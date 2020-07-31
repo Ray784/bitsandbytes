@@ -6,7 +6,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 .section{
-    font-family: Blackout-Midnight, sans-serif;
+    font-family: Bonus, sans-serif;
     text-transform: uppercase;
     transition: ease 0.1s;
     z-index: 10;
@@ -20,18 +20,19 @@ body::-webkit-scrollbar {
 }
 
 .part2{
-  font-family: Blackout-2am, sans-serif;
+  color: #ee4938;
 }
 .content{
   margin-bottom: 20px; 
   align-items: center; 
   justify-content: center; 
   text-align: center;
+  font-family: IBM-med, sans-serif;
   width: 100%;
 }
 .accordion {
-  background-color: #fcfcfc;
-  color: #444;
+  background-color: #3a3a3a;
+  color: #fcfcfc;
   font-family: Ubuntu, sans-serif;
   font-size: 1.5em;
   font-weight: 500;
@@ -65,16 +66,17 @@ img{
 }
 .btn{
 	padding: 10px;
-	background-color: #feac1a;
+	background-color: #3a3a3a;
 	margin: 10px;
 	border-radius: 5px;
 	text-decoration: none;
 	color: white;
 	font-size: 0.8em;
 	transition: 0.4s;
+  font-family: Ubuntu;
 }
 .btn:hover{
-	background-color: #e5a029;
+	background-color: #1b1b1b;
 }
 .cover{
 	padding: 10px;
@@ -85,7 +87,7 @@ img{
 
 .panel {
 	padding: 0 18px;
-	font-family: Ubuntu;
+	font-family: IBM-med;
 	text-transform: none;
 	font-size: 1.2em;
 	background-color: #fff;
