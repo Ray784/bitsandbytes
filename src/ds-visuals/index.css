@@ -1,0 +1,384 @@
+@font-face {
+	font-family: Blackout-2am;
+	src: url('../assets/fonts/Blackout-2am.ttf');
+}
+
+@font-face {
+	font-family: Blackout-Midnight;
+	src: url('../assets/fonts/Blackout-Midnight.ttf');
+}
+@font-face {
+	font-family: Ubuntu;
+	src: url('../assets/fonts/Ubuntu-Medium.ttf');
+}
+@font-face {
+  font-family: Bonus;
+  src: url('../assets/fonts/Bonus.ttf');
+}
+@font-face {
+  font-family: IBM-Med;
+  src: url('../assets/fonts/IBMPlexSans-ExtraLight.woff');
+}
+@font-face {
+  font-family: IBM-L8;
+  src: url('../assets/fonts/IBMPlexSans-Medium.ttf');
+}
+@font-face {
+  font-family: Geneva;
+  src: url('../assets/fonts/GENEVA.ttf');
+}
+
+/*for visuals*/
+body{
+	margin: 0px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	font-family: IBM-L8;
+	background-color:  #1b1b1b;
+  color: #fcfcfc;
+}
+
+.base{
+	min-height: 450px;
+	max-width: 800px;
+	padding: 20px;
+	border-radius: 5px;
+
+}
+
+.pre{
+  padding-left: -10px;
+}
+
+.contain{
+  padding-left: 30px;
+}
+
+.tab-content{
+	margin: 10px;
+}
+
+.speed{
+  margin-bottom: 10px;
+}
+ 
+a.btn{
+  color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+input[type=number] {
+	width: 100px;
+  -moz-appearance: textfield;
+}
+
+.row-holder{
+	margin: 10px;
+}
+
+a:hover{
+	cursor: pointer;
+}
+
+.img{
+	height: 300px;
+  width: 320px;
+  display: block;
+  margin: auto;
+}
+
+.btn-scroll{
+  background-color: #FEAC1A;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  z-index: 99;
+  padding: 0px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+}
+
+.bounce {
+	-moz-animation: bounce-down 3s infinite;
+	-webkit-animation: bounce-down 3s infinite;
+	animation: bounce-down 3s infinite;
+}
+@-moz-keyframes bounce-down {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce-down {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce-down {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+.img-scroll{
+  content: url('./images/down.png');
+	padding: 0;
+	height: 50px;
+	width: 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.center{
+  display: block;
+  margin: auto;
+}
+
+.card{
+  z-index: 0;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  background-color: #2F3129;
+  color: #fcfcfc;
+  border: 0px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  transition: 0.3s;
+}
+
+
+.card-title{
+  text-decoration: underline;
+}
+
+.code-viewer{
+  text-align: left;
+}
+
+
+.display{
+  width: 480px;
+}
+
+svg{
+	overflow: auto;
+}
+
+
+.btn-p{
+  background-color: #3F51B5;
+}
+.btn-p:hover{
+  background-color: #5462b0;
+}
+.btn-p:focus{
+  background-color: #3F51B5;
+}
+
+.btn-p:active{
+  background-color: #3F51B5;
+}
+
+.notif-btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.notif-btn:hover{
+  color: #d3d3d3;
+}
+
+.notif-btn:focus {
+  outline:0;
+}
+
+.navbar{
+  height: 64px;
+  background-color: #1E88E5;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  font-family: "Poppins", sans-serif;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000;
+}
+
+.stick{
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000;
+}
+
+.center{
+  margin: 0 auto;
+}
+
+.right{
+  margin-right: 10px;
+  float: right; 
+}
+
+.left{
+  margin-left: 10px;
+  float: left; 
+}
+
+.notif-btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.notif-btn:hover{
+  color: #d3d3d3;
+}
+
+.notif-btn:focus {
+  outline:0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EEF5F9; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2F3129; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #272822; 
+}
+
+@-webkit-keyframes turn
+{
+  0% {
+    stroke-dashoffset: 180;
+  }
+
+  50% {
+    stroke-dashoffset: 45;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  100% {
+    stroke-dashoffset: 180;
+    -webkit-transform: rotate(450deg);
+    transform: rotate(450deg);
+  }
+}
+
+@keyframes turn
+{
+  0% {
+    stroke-dashoffset: 180;
+  }
+
+  50% {
+    stroke-dashoffset: 45;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  100% {
+    stroke-dashoffset: 180;
+    -webkit-transform: rotate(450deg);
+    transform: rotate(450deg);
+  }
+}
+
+.circle
+{
+  stroke-dasharray: 180;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: turn 1.35s ease-in-out infinite;
+  animation: turn 1.35s ease-in-out infinite;
+  stroke: #3f51b5;
+}
+
+.spinner
+{
+  -webkit-animation: rotation 1.35s linear infinite;
+  animation: rotation 1.35s linear infinite;
+}
+
+@-webkit-keyframes rotation
+{
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes rotation
+{
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+}

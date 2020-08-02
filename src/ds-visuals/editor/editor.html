@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>editor</title>
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #EEF5F9; 
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #2F3129; 
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #272822; 
+    }
+</style>
+</head>
+<body>
+<div id="editor"></div>
+    
+<script src="./src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+    var dark_themes = ['ambiance', 'clouds_midnight', 'cobalt', 'dracula', 'gob', 'gruvbox', 'kr_theme', 'monokai', 'terminal', 'vibrant_ink']
+    var light_themes = ['dawn', 'github', 'iplastic', 'kuroir']
+    var pane_colors = ['#3D3D3D', '#232323', '#011E3A', '#282A36', '#0B1818', '#1D2021' , '#1C1917',  '#2F3129', '#1A0005', '#1A1A1A', '#EBEBEB', '#E8E8E8', '#DDDDDD','#E8E8E8'];
+    function changeTheme(theme){
+        editor.setTheme("ace/theme/"+theme);
+    }
+    $(document).bind('keydown', function(e) {
+      if(e.ctrlKey && (e.which == 83)) {
+        e.preventDefault();
+        //alert("hi")
+        parent.save();
+        return false;
+      }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+input[type = number]{
+	width: 500px;
+}
+
+.expn_val{
+	padding: 5px;
+	text-align: center;
+	border: solid 2px #2196F3;
+	background-color: #EFF0F3;
+	margin: 2px;
+}
+
+#expn{
+	margin-left: 15px;
+}

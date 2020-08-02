@@ -1,6 +1,15 @@
 <div class="body">
+	<div class="navButton" #navButton (click)="showMenuBar(navButton)">
+			<div></div>
+			<div></div>
+		</div>
+		<div id="menu" class="menubar" style="display: none;">
+			<div><a routerLink = "blog">Blog</a></div>
+			<div><a>About</a></div>
+			<div><a href="https://www.jntuhceh.ac.in" target="_blank">University</a></div>
+		</div>
 	<div class="section"*ngFor="let resource of resources">
-		<h1>{{resource.title}}</h1>
+		<h1>{{resource.title1}}<span class="part2">{{resource.title2}}</span></h1>
 		<div >
 			<button class="accordion">{{resource.subtitle}}</button>
 			<div class="panel">

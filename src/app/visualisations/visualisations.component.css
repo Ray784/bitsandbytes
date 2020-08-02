@@ -1,0 +1,174 @@
+/* for mobile*/
+.body{
+	padding-left: 1.5vh;
+}
+h2{
+	font-size: 6em;
+}
+h3{
+	font-size: 3em;
+	margin-bottom: 20px;
+}
+a{
+	text-decoration: none;
+}
+.section{
+	font-family: Blackout-Midnight, sans-serif;
+	text-transform: uppercase;
+	transition: ease 0.1s;
+	z-index: 10;
+    overflow: hidden;
+    height: 80vh;
+    max-height: 100vw;
+    margin-top: 10vh;
+    padding-bottom: 26vh;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+.part2{
+	font-family: Blackout-2am, sans-serif;
+}
+.scrolldown{
+	width: 60px;
+	height: 60px;
+	margin:auto;
+	transform: rotate(45deg);
+}
+.scrolldown span{
+	font-size: 0.8em;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 40px;
+	height: 40px;
+	border-bottom: 2px solid #fcfcfc;
+	border-right: 2px solid #fcfcfc;
+}
+
+.scrolldown span:nth-child(1){
+	font-family: Blackout-Midnight, sans-serif;
+	text-align: center;
+	transform: rotate(-45deg);
+	border: 0px;
+	animation: down 1s linear infinite;	
+}
+
+.scrolldown span:nth-child(2){
+	transform: translate(-10px, -10px);
+	animation-delay: -0.2s;
+	animation: down 1s linear infinite, fade 1s linear infinite;
+	opacity: 0;
+}
+
+.scrolldown span:nth-child(3){
+	transform: translate(5px, 5px);
+	animation: down 1s linear infinite, fade 1s linear infinite;
+	opacity: 0;
+}
+
+
+.image{
+	width: 90vw; 
+	height: 50vh;
+	border-radius: 2px; 
+	max-width: 90vh;
+	background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+}
+.sectionButton{
+	position: relative;
+	overflow: hidden;
+    left: 25vw;
+    bottom: 11vh;
+    z-index: 500;
+    cursor: pointer;
+
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 150px;
+    height: 150px;
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
+    -webkit-perspective-origin: 100% 50%;
+    perspective-origin: 100% 50%;
+    -webkit-transition: letter-spacing 200ms cubic-bezier(.455, .03, .427, .964);
+    transition: letter-spacing 200ms cubic-bezier(.455, .03, .427, .964);
+    font-size: 14px;
+    line-height: 1em;
+    text-align: center;
+    letter-spacing: 7px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+.sectionButton:hover{
+	font-size: 1.5em;
+}
+
+.menubar div:nth-child(1){
+  animation-delay: 0.2s;
+}
+.menubar div:nth-child(2){
+  animation-delay: 0.4s;
+}
+.menubar div:nth-child(3){
+  animation-delay: 0.6s;
+}
+.menubar div:nth-child(4){
+  animation-delay: 0.8s;
+}
+.menubar div:nth-child(5){
+  animation-delay: 1s;
+}
+/*@media only screen and (max-width: 767px) {
+	h2{
+		font-size: 9em;
+	}
+}*/
+
+@media only screen and (min-width: 767px) {
+	/*for desktop*/
+	.body{
+		padding-left: 10vw;	
+	}
+	h2{
+		font-size: 9em;	
+	}
+	h3{
+		font-size: 6em;
+		margin-bottom: 20px;
+	}
+	.section{
+	    height: 100vh;
+	    padding-bottom: 10vh;
+	}
+	.scrolldown{
+		width: 60px;
+		height: 60px;
+	}
+	.image{
+		width: 60vw; 
+		height: 70vh;
+		max-width: 1536px; 
+		max-height: 1044px;
+	}
+	.sectionButton{
+		left: 55vw;
+		bottom: 40vh;
+	}
+}

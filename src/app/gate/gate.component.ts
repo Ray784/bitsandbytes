@@ -12,6 +12,8 @@ export class GateComponent implements OnInit {
 		body[0].style.backgroundColor = "#fcfcfc";
 		body[0].style.color = "#3a3a3a";
 		this.scrollTop();	
+		//let nav = document.getElementsByClassName('navButton')[0] as HTMLElement;
+		//nav.style.backgroundColor = '#3a3a3a';
 	}
 
 	ngOnInit(): void {

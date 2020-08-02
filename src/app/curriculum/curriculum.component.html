@@ -1,4 +1,14 @@
 <div class="body">
+	<br>
+	<div class="navButton" #navButton (click)="showMenuBar(navButton)">
+		<div></div>
+		<div></div>
+	</div>
+	<div id="menu" class="menubar" style="display: none;">
+		<div><a routerLink = "blog">Blog</a></div>
+		<div><a>About</a></div>
+		<div><a href="https://www.jntuhceh.ac.in" target="_blank">University</a></div>
+	</div>
 	<div class="section" *ngFor="let sem of sems">
 		<h1>{{sem.year}} <span class="part2">{{sem.sem}}</span></h1>
 		<div *ngFor="let subject of sem.subs; let i = index" [attr.data-index] = "i">

@@ -430,4 +430,14 @@ export class CurriculumComponent implements OnInit {
 	{year: 'Professional Elective', sem:'IV', subs: this.pe4, books: this.fourth_year_2_books},
 	{year: 'Professional Elective', sem:'V', subs: this.pe5, books: this.fourth_year_2_books},
 	{year: 'Professional Elective', sem:'VI', subs: this.pe6, books: this.fourth_year_2_books},]
+
+	showMenuBar(nav){
+		nav.classList.toggle("rotate");
+		let menu = document.getElementById('menu');
+		let header = document.getElementById('header');
+		if (menu.style.display === "none")
+			menu.style.display = "block";
+		else
+			menu.style.display = "none";
+	}
 }

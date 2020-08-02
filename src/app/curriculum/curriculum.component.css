@@ -6,7 +6,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 .section{
-    font-family: Bonus, sans-serif;
+    font-family: Ubuntu, sans-serif;
     text-transform: uppercase;
     transition: ease 0.1s;
     z-index: 10;
@@ -18,7 +18,9 @@ body::-webkit-scrollbar {
     -ms-flex-pack: end;
     justify-content: flex-end;
 }
-
+h1{
+  text-align: center;
+}
 .part2{
   color: #ee4938;
 }
@@ -83,6 +85,7 @@ img{
 }
 .active, .accordion:hover {
 	background-color: #ccc;
+  color: #1b1b1b;
 }
 
 .panel {
@@ -100,6 +103,35 @@ img{
 .img-holder{
   width: 100vw;
   height: 200px;
+}
+
+.navButton{
+    background-color: #3a3a3a;
+}
+
+.navButton div{
+    background-color: #fff;
+}
+
+.navButton:hover div{
+    background-color: #ee4938;
+}
+
+.menubar{
+  background-color: #3a3a3a;
+}
+
+.menubar a{
+  color: #fff;
+  font-family: Ubuntu, sans-serif;
+}
+
+.menubar div:hover{
+  background-color: #d3d3d3;
+}
+
+.menubar div:hover a{
+  color: #ee4938;
 }
 @media only screen and (min-width: 767px) {
   /*for desktop*/

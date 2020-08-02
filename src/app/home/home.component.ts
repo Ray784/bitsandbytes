@@ -40,14 +40,27 @@ export class HomeComponent implements OnInit {
 	scrollTop(){
 		window.scrollTo(0, 0);
 	}
+	
 	showMenuBar(nav){
+		let sections = document.getElementsByClassName('section');
 		nav.classList.toggle("rotate");
 		let menu = document.getElementById('menu');
 		let header = document.getElementById('header');
-		if (menu.style.display === "none")
+		if (menu.style.display === "none"){
 			menu.style.display = "block";
-		else
+			//this.setOpacity(sections, '0.3');
+			menu.style.opacity = '1';
+			nav.style.opacity = '1';
+		}
+		else{
 			menu.style.display = "none";
+			//this.setOpacity(sections, '1');
+		}
+	}
+	
+	setOpacity(sections, opacity){
+		for(let section of sections)
+			(section as HTMLElement).style.opacity = opacity;
 	}
 
 	makeRipple(x, y){

@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+.pane{
+	width: 100%;
+	height: 450px;
+	border: none;
+}
+
+#x {
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	width: 20px;
+	height: 20px;
+	z-index: 99;
+	padding: 0px;
+	border-radius: 50%;
+	border: none;
+	font-size: 18px;
+    color: red;
+    background-color: white;
+}
+
+#x:hover{
+	color: #d3d3d3;
+}
+
+#x:focus{
+	outline: none;
+}
+
+.pane-section{
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+	color: white; 
+	text-align: left; 
+	font-size: 15px;
+	overflow: auto;
+	background-color: white;
+	display: none;
+}
+
+.notif{
+	width: 300px;
+	height: 130px;
+	display: block;
+	margin: 0 auto;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+	color: white; 
+	text-align: left; 
+	font-size: 15px;
+	overflow: auto;
+	padding: 30px;
+	color: black;
+	background-color: white;
+}
+
+#text{
+	margin-left: 10px; 
+}
+
+.pane:focus{
+	outline: none;
+}
+
+.pane-top{
+	width: 100%;
+	height: 50px;
+	background-color: #2F3129;
+}
+
+.err{
+	color: black;
+	font-family: 'Inconsolata', monospace;
+	padding: 20px;
+}
+
+.alert{
+	width: 50%;
+	margin: 0 auto;
+}
+
+body{
+	background-color: #1d1f21;
+	scroll-behavior: smooth;
+}
+
+.btn-run{
+	background-color: #28A745;
+}
+
+.btn-run:hover{
+	background-color: #218838;
+}
+
+.btn-prim{
+	background-color: #0095FF;
+}
+
+.btn-prim:hover{
+	background-color: #0077CC;
+}
+
+.btn-acc{
+	background-color: #EEA236;
+}
+
+.btn-acc:hover{
+	background-color: #EC971F;
+}
+
+.nbtn:disabled,
+.nbtn[disabled]{
+	filter: grayscale(100%);
+}
+
+.nbtn{
+	border-radius: 0;
+	margin-left: 24px;
+	height: 30px;
+	min-width: 100px;
+	float: left;
+	border: none;
+	color: white;
+  	font-family: "Poppins", sans-serif;
+}
+
+.btn-drop{
+	background-color: #EEF5F9;
+	margin: 10px;
+	margin-left: 24px;
+}
+
+.btn-samp{
+	background-color: #1E88E5;
+	margin: 0px;
+	color: white;
+	float: right;
+}
+.btn-samp:hover{
+	background-color: #d3d3d3;
+}
+
+.txt{
+	line-height:24px;
+}
+
+i {
+  font-size: 24px !important;
+  vertical-align:middle;
+}
+
+.navbar{
+  position: relative !important;
+}

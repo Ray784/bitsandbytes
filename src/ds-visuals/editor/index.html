@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+    <script type="text/javascript">
+        if (window.screen.width < 720)
+          window.location = '../../#/mobile';
+    </script>
+    <title>Code editor</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="stylesheet" type="text/css" href="../index.css">
+  </head>
+
+  <body onload="setupEditor()">
+    <nav class="navbar">
+        <button class="left notif-btn" onclick="window.location = '../../#/curriculum'"><span class="material-icons" >local_library</span><font style="font-size: 13px;">Curicullum</font></button>
+        <button class="left notif-btn" onclick="window.location = '../'"><span class="material-icons" >bubble_chart</span><font style="font-size: 13px;">DS</font></button>
+        <button class="left notif-btn" onclick="window.location = '../../#/interview'"><span class="material-icons" >meeting_room</span><font style="font-size: 13px;">Interview</font></button>
+        <span class="center">Code Editor</span>
+        <button class="right notif-btn" onclick="window.location = '../../#/home'"><span class="material-icons" >home</span><font style="font-size: 13px;">Home</font></button>
+        <button class="right notif-btn" onclick="window.location = '../../#/blog'"><span class="material-icons" >comment</span><font style="font-size: 13px;">Blog</font></button>
+        <button class="right notif-btn" onclick="window.location = '../documentation/'"><span class="material-icons" >description</span><font style="font-size: 13px;">Docs</font></button>
+    </nav>
+    <section style="margin-top: 20px;">
+      <div class="notif">
+         <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="circle" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg>
+         <span id="text">Loading Editor</span>
+      </div>
+    </section>
+    <section id="intro-section" class="pane-section" style="position: relative;"> 
+      <button class="navbar notif-btn pane-top" style="background-color: #2F3129;" onclick="$('#exp').toggle();$('#shrink').toggle();$('#expand').toggle();">
+        <span style="color: #CF3D1E;" onclick="$('#intro-section').hide();" class="notif-btn left"><span id="close" style="display: block;" class="material-icons">close</span></span>
+        <h5 class="card-title center head"></h5>
+        <span class="notif-btn right"><span id="shrink" style="display: block;" class="material-icons">expand_less</span></span>
+        <span class="notif-btn right"><span id="expand" style="display: none;" class="material-icons">expand_more</span></span>
+      </button>
+      <div id="exp" style="color: black; padding: 20px;">
+        <div id="desp"></div>
+        The following is the implementation. Tweak it to see the changes in visualisation ;)
+      </div>
+    </section>
+  	<section id="code-edit" class="pane-section" style="background-color: #2F3129;">
+      <div class="pane-top">
+        <div class="btn-group">
+          <button class="btn btn-drop btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Theme: <span id="theme">monokai</span>
+          </button>
+          <div class="dropdown-menu" id="theme-list">
+          </div>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-drop btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Language: <span id="lang">JS</span>
+          </button>
+          <div class="dropdown-menu" id="lang-list">
+            <a class='dropdown-item' id="js">JS</a>
+          </div>
+        </div>
+         <div class="btn-group">
+          <button class="btn btn-drop btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sample codes
+          </button>
+          <div class="dropdown-menu" id="samp-list">
+          </div>
+        </div>
+      </div>
+      <iframe id="edit" class="pane"  src="editor.html"></iframe>
+      <div class="pane-top">
+        <button class="nbtn btn-run" id="run" onclick="addScript()"><i class="material-icons">play_arrow</i><span class="txt">run</span></button>
+        <button class="nbtn btn-acc" onclick="save()"><i class="material-icons">save</i><span class="txt">save</span></button>
+        <a href="../documentation/"><button class="nbtn btn-prim"><i class="material-icons">description</i><span class="txt">how to use</span></button></a>
+      </div>
+    </section>
+    <br>
+    <section id="code-executor" class="pane-section">
+      <iframe id="executor" class="pane" style="height: 570px;" src="./executor.html">
+      </iframe>
+    </section>
+    <br>
+    <section id="code-error" class="pane-section">
+      <div id="err-card" class="err">Errors and console outputs appear here!</div>
+    </section>
+    <br>
+    
+  	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".contain").hide(0).fadeIn(1000)
+        });
+    </script>
+    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="./sample.js"></script>
+  </body>
+</html>

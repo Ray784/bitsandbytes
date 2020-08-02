@@ -4,6 +4,9 @@ import {HomeComponent} from './home/home.component';
 import {CurriculumComponent} from './curriculum/curriculum.component';
 import {InterviewComponent} from './interview/interview.component';
 import {GateComponent} from './gate/gate.component';
+import {BlogComponent} from './blog/blog.component';
+import {VisualisationsComponent} from './visualisations/visualisations.component';
+
 
 
 
@@ -12,7 +15,8 @@ const routes: Routes = [
 	{ path: 'curriculum', component: CurriculumComponent },
 	{ path: 'interview', component: InterviewComponent },
 	{ path: 'gate', component: GateComponent },
-
+	{ path: 'blog', component: BlogComponent },
+	{ path: 'ds-visuals', component: VisualisationsComponent },
 ];
 
 @NgModule({

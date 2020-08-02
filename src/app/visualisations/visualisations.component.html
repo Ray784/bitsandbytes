@@ -1,0 +1,67 @@
+<div class="body">
+	<button id="scrollTop" class="navTop" (click)="scrollTop()"><i class="arrow up"></i></button>
+
+	<div class="section" id="header">
+		<div id="company-head">
+			<h2>DS <br><span class="part2">{{title}}</span></h2>
+		</div>
+		<div class="navButton" #navButton (click)="showMenuBar(navButton)">
+			<div></div>
+			<div></div>
+		</div>
+		<div id="menu" class="menubar" style="display: none;">
+            <div><a routerLink="blog">Blog</a></div>
+            <div><a>About</a></div>
+            <div><a href = '../ds-visuals/editor/'>Editor</a></div>
+            <div><a routerlink="" >Home</a></div>
+            <div><a href="https://www.jntuhceh.ac.in" target="_blank">University</a></div>
+        </div>
+		<div class="scrolldown">
+			<span>SCROLL</span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+	<div class="section">
+		<h3 class="section-head head">Stack <span class="part2">DS</span></h3>
+		<div style="background-image: url('assets/ds/stack.svg');" class="image"></div>
+		<a routerLink = "curriculum"><div class="sectionButton" style="background-color: #ff6528; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+	</div>
+
+	<div class="section">
+		<h3 class="section-head head">Queue <span class="part2">DS</span></h3>
+		<div style="background-image: url('assets/ds/stack.svg');" class="image"></div>
+		<a routerLink = "curriculum"><div class="sectionButton" style="background-color: #ff6528; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+	</div>
+
+	<div class="section">
+		<h3 class="section-head head">Binary Search <span class="part2">Tree</span></h3>
+		<div style="background-image: url('assets/ds/stack.svg');" class="image"></div>
+		<a routerLink = "curriculum"><div class="sectionButton" style="background-color: #ff6528; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+	</div>
+
+	<div class="section">
+		<h3 class="section-head head">Max <span class="part2">Heap</span></h3>
+		<div style="background-image: url('assets/ds/stack.svg');" class="image"></div>
+		<a routerLink = "curriculum"><div class="sectionButton" style="background-color: #ff6528; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+	</div>
+
+	<div class="section">
+		<h3 class="section-head head">Min <span class="part2">Heap</span></h3>
+		<div style="background-image: url('assets/ds/stack.svg');" class="image"></div>
+		<a routerLink = "curriculum"><div class="sectionButton" style="background-color: #ff6528; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+	</div>
+
+	<div class="section">
+		<h3 class="section-head head">Quick <span class="part2">Sort</span></h3>
+		<div style="background-image: url('assets/ds/stack.svg');" class="image"></div>
+		<a routerLink = "curriculum"><div class="sectionButton" style="background-color: #ff6528; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+	</div>
+
+	<div class="section">
+		<h3 class="section-head head">Binary <span class="part2">Search</span></h3>
+		<div style="background-image: url('assets/ds/stack.svg');" class="image"></div>
+		<a routerLink = "curriculum"><div class="sectionButton" style="background-color: #ff6528; color:#fff;" (click)="sectionButtonClick($event);">Click Here!</div></a>
+	</div>
+</div>

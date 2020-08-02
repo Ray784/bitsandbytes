@@ -6,7 +6,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 .section{
-    font-family: Blackout-Midnight, sans-serif;
+    font-family: Ubuntu, sans-serif;
     text-transform: uppercase;
     transition: ease 0.1s;
     z-index: 10;
@@ -18,20 +18,23 @@ body::-webkit-scrollbar {
     -ms-flex-pack: end;
     justify-content: flex-end;
 }
-
+h1{
+  text-align: center;
+}
 .part2{
-  font-family: Blackout-2am, sans-serif;
+  color: #ee4938;
 }
 .content{
   margin-bottom: 20px; 
   align-items: center; 
   justify-content: center; 
   text-align: center;
+  font-family: IBM-med, sans-serif;
   width: 100%;
 }
 .accordion {
-  background-color: #fcfcfc;
-  color: #444;
+  background-color: #3a3a3a;
+  color: #fcfcfc;
   font-family: Ubuntu, sans-serif;
   font-size: 1.5em;
   font-weight: 500;
@@ -51,12 +54,12 @@ body::-webkit-scrollbar {
   margin-left: 5px;
 }
 .active:after {
-	content: "\2796";
+  content: "\2796";
 }
 
 img{
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   display: block;
   margin: auto;
   padding: 0.75rem;
@@ -64,40 +67,71 @@ img{
   border-radius: 0;
 }
 .btn{
-	padding: 10px;
-	background-color: #feac1a;
-	margin: 10px;
-	border-radius: 5px;
-	text-decoration: none;
-	color: white;
-	font-size: 0.8em;
-	transition: 0.4s;
+  padding: 10px;
+  background-color: #3a3a3a;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.8em;
+  transition: 0.4s;
+  font-family: Ubuntu;
 }
 .btn:hover{
-	background-color: #e5a029;
+  background-color: #1b1b1b;
 }
 .cover{
-	padding: 10px;
+  padding: 10px;
 }
 .active, .accordion:hover {
-	background-color: #ccc;
+  background-color: #ccc;
+  color: #1b1b1b;
 }
 
 .panel {
-	padding: 0 18px;
-	font-family: Ubuntu;
-	text-transform: none;
-	font-size: 1.2em;
-	background-color: #fff;
-	color: #1b1b1b;
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.2s ease-out;
+  padding: 0 18px;
+  font-family: IBM-med;
+  text-transform: none;
+  font-size: 1.2em;
+  background-color: #fff;
+  color: #1b1b1b;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
 .img-holder{
   width: 100vw;
   height: 200px;
+}
+
+.navButton{
+    background-color: #3a3a3a;
+}
+
+.navButton div{
+    background-color: #fff;
+}
+
+.navButton:hover div{
+    background-color: #ee4938;
+}
+
+.menubar{
+  background-color: #3a3a3a;
+}
+
+.menubar a{
+  color: #fff;
+  font-family: Ubuntu, sans-serif;
+}
+
+.menubar div:hover{
+  background-color: #d3d3d3;
+}
+
+.menubar div:hover a{
+  color: #ee4938;
 }
 @media only screen and (min-width: 767px) {
   /*for desktop*/
@@ -118,6 +152,6 @@ img{
     margin-left: 0.75rem;
   }
   .cover{ 
-  	display: flex;
+    display: flex;
   }
 }

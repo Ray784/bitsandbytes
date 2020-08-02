@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tree</title>
+	<meta charset="utf-8">
+    <meta HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript">
+        if (window.screen.width < 720)
+          window.location = '../../#/mobile';
+    </script>
+	<script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.min.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../index.css">
+	<link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+	<nav class="navbar" style="background-color: white; padding: 10px; height: 74px; color: black;">
+		<button class="left notif-btn" onclick="window.location = '../'"><span class="material-icons" >bubble_chart</span><font style="font-size: 13px;">DS</font></button>
+		<div class="speed center">
+			<button class="btn">Visualisation<br>speed</button>:
+			<a class="btn btn-info" id="speed_0_1x" onclick="setSpeed(speed_0_1x, $(this))">0.1x</a>
+			<a class="btn btn-info" id="speed_0_5x" onclick="setSpeed(speed_0_5x, $(this))">0.5x</a>
+			<a class="btn btn-info" id="speed_1x" onclick="setSpeed(speed_1x, $(this))">1x</a>
+			<a class="btn btn-info disabled" id="speed_2x" onclick="setSpeed(speed_2x, $(this))">2x</a>
+			<a class="btn btn-info" id="speed_3x" onclick="setSpeed(speed_3x, $(this))">3x</a>
+			<a class="btn btn-info" id="speed_10x" onclick="setSpeed(speed_10x, $(this))">10x</a>
+			<a class="btn btn-info" id="speed_x" onclick="setSpeed(speed_x, $(this))">100x</a>
+		</div>
+		<button class="right notif-btn" onclick="window.location = '../../#/home'"><span class="material-icons" >home</span><font style="font-size: 13px;">Home</font></button>
+	</nav>
+	<br>
+	<button class="btn btn-scroll bounce btn-primary" id="scroll" onclick="$(window).scrollTop($(window).height());"><img class="img-scroll"></button>
+	<div class="contain">
+		<div class=" row col-md-12">
+			<div class="card base visualizer col-md">
+				<div id="output"></div>
+				<div class="alert alert-success">Visualisation Appears here!</div>
+				<div class="data"></div>
+			</div>
+			<div class="card base code-viewer col-md">
+				<div id="scroller" style="display: none;">&nbsp</div>
+				<div id="none" class="alert alert-success">Code Appears here!</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="contain">
+		<div class="row col-md-12">
+			<div class="card col-md" id="create">
+				<h5>Create a new Tree</h5><hr>
+				<div class="row" id="create_form">
+					<button class="btn">Create Tree with <br>following elements: </button>
+					<a id="addNewInput" style="margin: 3px;"><i class="material-icons addNew">add_circle_outline</i></a>
+					<a id="removeNewInput" style="display: none; margin: 3px;"><i class="material-icons addNew">remove_circle_outline</i></a>
+					<input class="form-control row-holder" type="number" id="create_val_1">
+				</div>
+				<button class="btn btn-primary row-holder center" onclick="create_handler()">Create</button>
+			</div>
+
+			<div class="card col-md" id="operations">
+				<h5>Tree Operations</h5><hr>
+				<div class="alert alert-success">Create a tree to view operations</div>
+			</div>
+		</div>
+
+		<div class="row col-md-12">
+			<div class="card col-md" id="traversals">
+				<h5>Tree Traversals</h5><hr>
+				<div class="alert alert-success">Create a tree to view traversals</div>
+			</div>
+
+			<div class="card col-md" id="codes" role="tabpanel" aria-labelledby="code-tab">
+				<h5>Implementation codes</h5><hr>
+				<a class="btn btn-primary center" href="./code/" target="_blank">click here to obtain codes.</a>
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
+	<script type="text/javascript" src="../index.js"></script>
+	<script type="text/javascript" src="../stack/index.js"></script>
+	<script type="text/javascript" src="../queue/index.js"></script>
+	<script type="text/javascript" src="./index.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $(".contain").hide(0).fadeIn(1000)
+        });
+        $(document).on('scroll', function(e){
+			let scroll_val = $(document).scrollTop();
+			$('#scroller').css('height', scroll_val+'px');
+		});
+    </script>
+</body>
+</html>

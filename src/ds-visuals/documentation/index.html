@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        if (window.screen.width < 720){
+            $("head").append('<style type="text/css"></style>');
+            var newStyleElement = $("head").children(':last');
+            newStyleElement.html('.mobile{display:none;}');
+        }
+            
+    </script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <title>DSA Visualisation Documentation.</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+        }
+        .card{
+            margin-bottom: 50px;
+            text-align: left;
+        }
+        .main>li{
+            background-color: #F0F7FA;
+            padding: 10px;
+            max-width: 60%;
+            border-radius: 5px;
+        }
+        .main-1>li{
+            max-width: 75%;
+        }
+        small{
+            background-color: #D4EDDA;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .sub>li{
+            background-color: #FFF3CD;
+            padding: 10px;
+            margin: 4px;
+            border-radius: 4px;
+        }
+        .vrbl{
+            color: #FF9C34;
+        }
+        .small-btn{
+              background: none; /* Green */
+              border: #d3d3d3 solid 1px;
+              border-radius: 5px;
+              color: #1E88E5;
+              margin-left: 10px;
+              margin-top: 10px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 12px;
+              width: 60px;
+              height: 30px;
+        }
+        .small-btn:focus{
+            border-color: black;
+            outline: none;
+        }
+        a{
+            text-decoration: underline;
+        }
+        @media only screen and (max-width: 720px) {
+            .main>li{
+                max-width: 90%; 
+            }
+            .main1>li{
+                max-width: 90%;
+            }
+
+        }
+    </style>
+  </head>
+  <body>
+  	<nav class="navbar">
+        <a href="#stack"><button class="left notif-btn mobile"><span class="material-icons" >layers</span><font style="font-size: 13px;">Stack</font></button></a>
+        <a href="#queue"><button class="left notif-btn mobile"><span class="material-icons" >view_column</span><font style="font-size: 13px;">Queue</font></button></a>
+        <a href="#bst"><button class="left notif-btn mobile"><span class="material-icons" >account_tree</span><font style="font-size: 13px;">Tree</font></button></a>
+        <span class="center">Documentation</span>
+        <button class="right notif-btn mobile" onclick="window.location = '../'"><span class="material-icons" >bubble_chart</span><font style="font-size: 13px;">DS</font></button>
+        <button class="right notif-btn" onclick="window.location = '../../#/home'"><span class="material-icons" >home</span><font style="font-size: 13px;">Home</font></button>
+        <button class="right notif-btn" onclick="window.location = '../../#/blog'"><span class="material-icons" >comment</span><font style="font-size: 13px;">Blog</font></button>
+    </nav>
+    <br>
+    <br>
+  	<div class="contain">
+        <section id="note">
+            <div class="row">
+                <div class="card display col-md-10 col-sm-10 col-xs-10 center">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #2878A2;">How to use?</h4>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title vrbl">Our Code Editor</h5>
+                            <ol class="main">
+                                You can use our code editor to visualise your own data structure(only stacks, queues, trees available) application visualisation (currently only js available)
+                                While using our <a href="../editor/">online code editor</a> you don't have to import any module. Just follow the given syntax for <a href="#stack">stacks</a>, <a href="#queue">queues</a> and <a href="#bst">trees</a> accordingly.
+                            </ol>
+                        </p>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title" style="color: #FF9C34;">Making your own js file.</h5>
+                            While making your own js file for data strucure visualisations using stacks queues and trees import the required modules using CDN.
+                            <ol class="main main-1">
+                                <li>
+                                    <b class="vrbl">Preparing the visualiser</b>
+                                    <ul>
+                                        <li><b>HTML: </b>
+                                            make sure you have the following set of elements(as shown in the example html) in your html file to render the visualisations properly.<br>
+                                            <a href="example.html" target="_blank" download="example.html">example.html</a>
+                                            <br>
+                                            <small><b>Note: </b>You might change the css as you feel good.</small>
+                                        </li>
+                                        <li><b>JS: </b>
+                                            To get the visualisations up and running you need two files one is main.js and other pertaining to the datastructure you need to visualise. The main.js file is to be included using the script:
+                                            <br>
+                                            <ol class="sub">
+                                                <b>unminified:</b>
+                                                <li>
+                                                    <a target="_blank" href="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/main.js">&lt;script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/main.js' integrity='sha256-9BOzdXJoQbfa6O8jFncswEigZzG5cETkF5flDKFmJIg=' crossorigin='anonymous'>&lt;/script></a>
+                                                    <button class="small-btn" data-toggle="tooltip" data-placement="top"
+                                                    data-clipboard-text="<script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/main.js' integrity='sha256-9BOzdXJoQbfa6O8jFncswEigZzG5cETkF5flDKFmJIg=' crossorigin='anonymous'></script>" onclick="copyLink($(this));">copy</button>
+                                                </li>
+                                                <b>minified:</b>
+                                                <li>
+                                                    <a target="_blank" href="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/main.min.js">&lt;script src="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/main.min.js">&lt;/script></a>
+                                                    <button class="small-btn" data-toggle="tooltip" data-placement="top"
+                                                    data-clipboard-text="<script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/main.min.js'></script>" onclick="copyLink($(this));">copy</button>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Including the js for required datastructures.</b>
+                                    <ul>
+                                        <li><b>Stack: </b>
+                                           To use the <a href="#stack">stack variables and methods</a> include stack.js file using the following script:
+                                            <br>
+                                            <ol class="sub">
+                                                <b>unminified:</b>
+                                                <li>
+                                                    <a target="_blank" href="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/stack.js">&lt;script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/stack.js' integrity='sha256-ID5YzmEF3x/nqPnD9XMxC1reRq47+vAg8Mvy+VnCnqA=' crossorigin='anonymous'>&lt;/script></a>
+                                                    <button class="small-btn" data-toggle="tooltip" data-placement="top"
+                                                    data-clipboard-text="<script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/stack.js' integrity='sha256-ID5YzmEF3x/nqPnD9XMxC1reRq47+vAg8Mvy+VnCnqA=' crossorigin='anonymous'></script>" onclick="copyLink($(this));">copy</button>
+                                                </li>
+                                                <b>minified:</b>
+                                                <li>
+                                                    <a target="_blank" href="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/stack.min.js">&lt;script src="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/stack.min.js">&lt;/script></a>
+                                                    <button class="small-btn" data-toggle="tooltip" data-placement="top"
+                                                    data-clipboard-text="<script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/stack.min.js'></script>" onclick="copyLink($(this));">copy</button>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Queue: </b>
+                                           To use the <a href="#queue">queue variables and methods</a> include queue.js file using the following script:
+                                            <br>
+                                            <ol class="sub">
+                                                <b>unminified:</b>
+                                                <li>
+                                                    <a href="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/queue.js" target="_blank">&lt;script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/queue.js' integrity='sha256-ZVGftddTk0aIjbnxYSPP9hCwCCs+CqGfXPx0vZuHDUY=' crossorigin='anonymous'>&lt;/script></a>
+                                                    <button class="small-btn" data-toggle="tooltip" data-placement="top"
+                                                    data-clipboard-text="<script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/queue.js' integrity='sha256-ZVGftddTk0aIjbnxYSPP9hCwCCs+CqGfXPx0vZuHDUY=' crossorigin='anonymous'></script>" onclick="copyLink($(this));">copy</button>
+                                                </li>
+                                                <b>minified:</b>
+                                                <li>
+                                                    <a href="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/queue.min.js" target="_blank">&lt;script src="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/queue.min.js">&lt;/script></a>
+                                                    <button class="small-btn" data-toggle="tooltip" data-placement="top"
+                                                    data-clipboard-text="<script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/queue.min.js'></script>" onclick="copyLink($(this));">copy</button>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Binary Search Tree: </b>
+                                           To use the <a href="#bst">tree variables and methods</a> include tree.js file using the following script:
+                                            <br>
+                                            <ol class="sub">
+                                                <b>unminified:</b>
+                                                <li>
+                                                    <a target="_blank" href="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/tree.js">&lt;script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/tree.js' integrity='sha256-hO7opiPTvTxTJFUSqXnU5omoy0V9ZcDPIrMKTnxPBV4=' crossorigin='anonymous'>&lt;/script></a>
+                                                    <button class="small-btn" data-toggle="tooltip" data-placement="top"
+                                                    data-clipboard-text="<script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/tree.js' integrity='sha256-hO7opiPTvTxTJFUSqXnU5omoy0V9ZcDPIrMKTnxPBV4=' crossorigin='anonymous'></script>" onclick="copyLink($(this));">copy</button>
+                                                </li>
+                                                <b>minified:</b>
+                                                <li>
+                                                    <a target="_blank" href="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/tree.min.js">&lt;script src="https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/tree.min.js">&lt;/script></a>
+                                                    <button class="small-btn" data-toggle="tooltip" data-placement="top"
+                                                    data-clipboard-text="<script src='https://cdn.jsdelivr.net/gh/Ray784/cdn-ds@1.0.3/tree.min.js'></script>" onclick="copyLink($(this));">copy</button>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="stack">
+            <br>
+            <br>
+            <div class="row">
+          		<div class="card display col-md-10 col-sm-10 col-xs-10 center">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #2878A2;">Stack</h4>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title vrbl">Variables</h5>
+                            <ol class="main">
+                                <li>
+                                    <b class="vrbl">Variable name: </b> MAX 
+                                    <ul>
+                                        <li><b>Type:</b> Integer</li>
+                                        <li><b>Default value:</b> 6</li>
+                                        <li><b>Description:</b> The maximum number of elements allowed in a stack.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Variable name: </b> stacks 
+                                    <ul>
+                                        <li><b>Type:</b> Array</li>
+                                        <li><b>Default value:</b> [&nbsp;&nbsp;]</li>
+                                        <li><b>Description:</b> list of all stacks created using createStack method.</li> 
+                                        <small><b>Note: </b>stack in stacks array exists until it is deleted using the deleteDS method.</small>
+                                    </ul>
+                                </li>
+                                <br>
+                            </ol>
+                            <small><b>Note: </b>The values of the variables can be changed by simple assignment ex: MAX=100.</small>
+                        </p>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title" style="color: #FF9C34;">Methods</h5>
+                            <ol class="main">
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> createStack(arr, show)
+                                    <ul>
+                                        <li><b>Parameters: </b><ol class="sub">
+                                            <li><b>Name: </b> arr
+                                                <ul>
+                                                    <li><b>Type:</b> Array</li>
+                                                    <li><b>Description:</b> list of elements to be used to create a stacks.</li> 
+                                                    <li><small>use [&nbsp;&nbsp;] to create empty stack.</small>
+                                                </ul>
+                                            </li>
+                                            <li><b>Name: </b> show
+                                                <ul>
+                                                    <li><b>Type:</b> string</li>
+                                                    <li><b>Description:</b> property of the element to be visualised.</li> 
+                                                    <li><small>leave blank in case of primitive types. ex: createStack([12])</small>
+                                                </ul>
+                                            </li></ol>
+                                        </li>
+                                        <li><b>Return Type:</b> Stack</li>
+                                        <li><b>Description:</b> The function returns a stack with the elements of arr pushed into it.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> push(stack, data)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> stack
+                                                    <ul>
+                                                        <li><b>Type:</b> Stack</li>(probably created using createStack method)
+                                                        <li><b>Description:</b>The stack to push the element into.</li> 
+                                                    </ul>
+                                                </li>
+                                                <li><b>Name: </b> data
+                                                    <ul>
+                                                        <li><b>Type:</b> any</li>
+                                                        <li><b>Description:</b> element to be pushed into the stack.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> null</li>
+                                        <li><b>Description:</b> The function pushes the element into the stack and also visualises the insertion.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> pop(stack)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> stack
+                                                    <ul>
+                                                        <li><b>Type:</b> Stack</li>(probably created using createStack method)
+                                                        <li><b>Description:</b>The stack to pop the element from.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> any</li>
+                                        <li><b>Description:</b> The function pops an element from the stack, visualises the deletion and returns the deleted element.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                            </ol>
+                        </p>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title vrbl">Attributes</h5>
+                            <ol class="main">
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> stk_top
+                                    <ul>
+                                        <li><b>Type:</b> Integer</li>
+                                        <li><b>Default value:</b> -1</li>
+                                        <li><b>Description:</b> The top pointer of the stack</li> 
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> length()
+                                    <ul>
+                                        <li><b>Return Type:</b> Integer</li>
+                                        <li><b>Description:</b> returns the length of stack</li> 
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> isEmpty()
+                                    <ul>
+                                        <li><b>Return Type:</b> Boolean</li>
+                                        <li><b>Description:</b> returns if the stack is empty or not.</li> 
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> toString()
+                                    <ul>
+                                        <li><b>Return Type:</b> String</li>
+                                        <li><b>Description:</b> returns a String showing the contents of the stack.</li> 
+                                    </ul>
+                                </li>
+                            </ol>
+                            <small><b>Note: </b>The values of the attribute can be accessed as stack.stk_top</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="queue">
+            <br>
+            <br>
+            <div class="row">
+                <div class="card display col-md-10 col-sm-10 col-xs-10 center">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #2878A2;">Queue</h4>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title vrbl">Variables</h5>
+                            <ol class="main">
+                                <li>
+                                    <b class="vrbl">Variable name: </b> MAX 
+                                    <ul>
+                                        <li><b>Type:</b> Integer</li>
+                                        <li><b>Default value:</b> 6</li>
+                                        <li><b>Description:</b> The maximum number of elements allowed in a queue.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Variable name: </b> queues 
+                                    <ul>
+                                        <li><b>Type:</b> Array</li>
+                                        <li><b>Default value:</b> [&nbsp;&nbsp;]</li>
+                                        <li><b>Description:</b> list of all queues created using createQueue method.</li> 
+                                        <small><b>Note: </b>queue in queues array exists until it is deleted using the deleteDS method.</small>
+                                    </ul>
+                                </li>
+                                <br>
+                            </ol>
+                            <small><b>Note: </b>The values of the variables can be changed by simple assignment ex: MAX=100.</small>
+                        </p>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title" style="color: #FF9C34;">Methods</h5>
+                            <ol class="main">
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> createQueue(arr, show)
+                                    <ul>
+                                        <li><b>Parameters: </b><ol class="sub">
+                                            <li><b>Name: </b> arr
+                                                <ul>
+                                                    <li><b>Type:</b> Array</li>
+                                                    <li><b>Description:</b> list of elements to be used to create a queues.</li> 
+                                                    <li><small>use [&nbsp;&nbsp;] to create empty queue.</small>
+                                                </ul>
+                                            </li>
+                                            <li><b>Name: </b> show
+                                                <ul>
+                                                    <li><b>Type:</b> string</li>
+                                                    <li><b>Description:</b> property of the element to be visualised.</li> 
+                                                    <li><small>leave blank in case of primitive types. ex: createQueue([12])</small>
+                                                </ul>
+                                            </li></ol>
+                                        </li>
+                                        <li><b>Return Type:</b> Queue</li>
+                                        <li><b>Description:</b> The function returns a queue with the elements of arr enqueued into it.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> enqueue(queue, data)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> queue
+                                                    <ul>
+                                                        <li><b>Type:</b> Queue</li>(probably created using createQueue method)
+                                                        <li><b>Description:</b>The queue to push the element into.</li> 
+                                                    </ul>
+                                                </li>
+                                                <li><b>Name: </b> data
+                                                    <ul>
+                                                        <li><b>Type:</b> any</li>
+                                                        <li><b>Description:</b> element to be inserted into the queue.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> null</li>
+                                        <li><b>Description:</b> The function enqueues the element into the queue and also visualises the insertion.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> dequeue(queue)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> queue
+                                                    <ul>
+                                                        <li><b>Type:</b> Queue</li>(probably created using createQueue method)
+                                                        <li><b>Description:</b>The queue to delete the element from.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> any</li>
+                                        <li><b>Description:</b> The function deletes an element from the queue, visualises the deletion and returns the deleted element.</li> 
+                                    </ul>
+                                </li>
+                            </ol>
+                        </p>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title vrbl">Attributes</h5>
+                            <ol class="main">
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> q_front
+                                    <ul>
+                                        <li><b>Type:</b> Integer</li>
+                                        <li><b>Default value:</b> -1</li>
+                                        <li><b>Description:</b> The front pointer of the queue</li> 
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> q_rear
+                                    <ul>
+                                        <li><b>Type:</b> Integer</li>
+                                        <li><b>Default value:</b> -1</li>
+                                        <li><b>Description:</b> The rear pointer of the queue</li> 
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> length()
+                                    <ul>
+                                        <li><b>Return Type:</b> Integer</li>
+                                        <li><b>Description:</b> returns the length of queue</li> 
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> isEmpty()
+                                    <ul>
+                                        <li><b>Return Type:</b> Boolean</li>
+                                        <li><b>Description:</b> returns if the queue is empty or not.</li> 
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> toString()
+                                    <ul>
+                                        <li><b>Return Type:</b> String</li>
+                                        <li><b>Description:</b> returns a String showing the contents of the queue.</li> 
+                                    </ul>
+                                </li>
+                            </ol>
+                            <small><b>Note: </b>The values of the attribute can be accessed as queue.q_front</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="bst">
+            <br>
+            <br>
+            <div class="row">
+                <div class="card display col-md-10 col-sm-10 col-xs-10 center">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #2878A2;">Binary Search Tree</h4>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title vrbl">Variables</h5>
+                            <ol class="main">
+                                <li>
+                                    <b class="vrbl">Variable name: </b> trees 
+                                    <ul>
+                                        <li><b>Type:</b> Array</li>
+                                        <li><b>Default value:</b> [&nbsp;&nbsp;]</li>
+                                        <li><b>Description:</b> list of all binary search trees created using createBST method.</li> 
+                                        <small><b>Note: </b>a binary search tree in trees array exists until it is deleted using the deleteDS method.</small>
+                                    </ul>
+                                </li>
+                                <br>
+                            </ol>
+                            <small><b>Note: </b>The values of the variables can be changed by simple assignment ex: MAX=100.</small>
+                        </p>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title" style="color: #FF9C34;">Methods</h5>
+                            <ol class="main">
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> createBST(arr, show)
+                                    <ul>
+                                        <li><b>Parameters: </b><ol class="sub">
+                                            <li><b>Name: </b> arr
+                                                <ul>
+                                                    <li><b>Type:</b> Array</li>
+                                                    <li><b>Description:</b> list of elements to be used to create a binary search tree.</li> 
+                                                    <li><small>use [&nbsp;&nbsp;] to create empty BST.</small>
+                                                </ul>
+                                            </li>
+                                            <li><b>Name: </b> show
+                                                <ul>
+                                                    <li><b>Type:</b> string</li>
+                                                    <li><b>Description:</b> property of the element to be visualised.</li> 
+                                                    <li><small>leave blank in case of primitive types. ex: createBST([12])</small>
+                                                </ul>
+                                            </li></ol>
+                                        </li>
+                                        <li><b>Return Type:</b> Tree</li>
+                                        <li><b>Description:</b> The function returns a binary search tree with the elements of arr inserted into it.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> insertBST(tree, data)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> tree
+                                                    <ul>
+                                                        <li><b>Type:</b> Tree</li>(probably created using createBST method)
+                                                        <li><b>Description:</b>The BST to insert the element into.</li> 
+                                                    </ul>
+                                                </li>
+                                                <li><b>Name: </b> data
+                                                    <ul>
+                                                        <li><b>Type:</b> any</li>
+                                                        <li><b>Description:</b> element to be inserted into the tree.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> null</li>
+                                        <li><b>Description:</b> The function inserts the element into the BST and also visualises the insertion.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> deleteBST(tree, data)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> tree
+                                                    <ul>
+                                                        <li><b>Type:</b> Tree</li>(probably created using createBST method)
+                                                        <li><b>Description:</b>The BST to delete the element from.</li> 
+                                                    </ul>
+                                                </li>
+                                                <li><b>Name: </b> data
+                                                    <ul>
+                                                        <li><b>Type:</b> any</li>
+                                                        <li><b>Description:</b> element to be deleted from the BST.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> any</li>
+                                        <li><b>Description:</b> The function deletes the specifed element from the BST, visualises the deletion and returns the deleted element.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> inorder(tree)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> tree
+                                                    <ul>
+                                                        <li><b>Type:</b> Tree</li>(probably created using createBST method)
+                                                        <li><b>Description:</b>The BST to traverse.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> none</li>
+                                        <li><b>Description:</b> The function visualises inorder traversal of the tree.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> preorder(tree)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> tree
+                                                    <ul>
+                                                        <li><b>Type:</b> Tree</li>(probably created using createBST method)
+                                                        <li><b>Description:</b>The BST to traverse.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> none</li>
+                                        <li><b>Description:</b> The function visualises preorder traversal of the tree.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> postorder(tree)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> tree
+                                                    <ul>
+                                                        <li><b>Type:</b> Tree</li>(probably created using createBST method)
+                                                        <li><b>Description:</b>The BST to traverse.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> any</li>
+                                        <li><b>Description:</b> The function visualises postorder traversal of the tree.</li> 
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="vrbl">Method syntax: </b> levelorder(tree)
+                                    <ul>
+                                        <li><b>Parameters: </b>
+                                            <ol class="sub">
+                                                <li><b>Name: </b> tree
+                                                    <ul>
+                                                        <li><b>Type:</b> Tree</li>(probably created using createBST method)
+                                                        <li><b>Description:</b>The BST to traverse.</li> 
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><b>Return Type:</b> any</li>
+                                        <li><b>Description:</b> The function visualises levelorder traversal of the tree.</li> 
+                                    </ul>
+                                </li>
+                            </ol>
+                        </p>
+                        <hr>
+                        <p class="card-text">
+                            <h5 class="card-title vrbl">Attributes</h5>
+                            <ol class="main">
+                                <li>
+                                    <b class="vrbl">Attribute name: </b> root
+                                    <ul>
+                                        <li><b>Type:</b> Integer</li>
+                                        <li><b>Default value:</b> -1</li>
+                                        <li><b>Description:</b> The root pointer of the tree</li> 
+                                    </ul>
+                                </li>
+                            </ol>
+                            <small><b>Note: </b>The values of the attribute can be accessed as tree.root</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="row">
+            <div class="card display col-md-10 col-sm-10 col-xs-10 center">
+                <div class="card-body">
+                    <h4 class="card-title" style="color: #2878A2;">Any data structure</h4>
+                    <hr>
+                    <p class="card-text">
+                        <h5 class="card-title vrbl">Method</h5>
+                        <ol class="main">
+                            <li>
+                                <b class="vrbl">Method syntax: </b> deleteDS(structure)
+                                <ul>
+                                    <li><b>Parameters: </b>
+                                        <ol class="sub">
+                                            <li><b>Name: </b> structure
+                                                <ul>
+                                                    <li><b>Type:</b> Stack/Tree/Queue</li>(probably created using createStack/createBST/createQueue methods)
+                                                    <li><b>Description:</b> structuree to be deleted from stacks/trees/queues array which stores stacks/trees/queues created using createStack/createBST/createQueue method.</li> 
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li><b>Return Type:</b> null</li>
+                                    <li><b>Description:</b> The function deletes the specified stack from the stacks array irrespective of its position.</li> 
+                                </ul>
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+  	</div>
+  	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script type="text/javascript">
+        var clipboard = new ClipboardJS('.small-btn');
+        function copyLink(button){
+            button.tooltip({title: "Copied!", animation: true}).ready(()=>{button.tooltip('show');});
+            setTimeout(()=>{button.tooltip('dispose')}, 2000);
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".contain").hide(0).fadeIn(1000)
+        });
+    </script>
+  </body>
+</html>

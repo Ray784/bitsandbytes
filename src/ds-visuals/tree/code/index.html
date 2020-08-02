@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+    
+
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Tree</title>
+    <style type="text/css">
+    	#c-code, #java-code, #py-code{
+    		padding: 40px;
+    	}
+    	.d-link{
+    		margin-left: 30px;
+    		margin-top: 10px;
+    		color: white;
+    	}
+    </style>
+</head>
+<body>
+	<br>
+	<br>
+	<div class="container">
+		<div class="tab-holder">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="c-tab" data-toggle="tab" href="#c-cpp" role="tab" aria-controls="c-cpp" aria-selected="true">C / C++</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="java-tab" data-toggle="tab" href="#java" role="tab" aria-controls="java" aria-selected="false">Java</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="false">Python</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="c-cpp" role="tabpanel" aria-labelledby="create-tab">
+				<a class="btn btn-success d-link" href="./queue.c" download="queue.c" target="_blank">queue.c</a>
+				<a id="c-link" class="btn btn-success d-link" target="_blank">Download</a>
+				<pre id="c-code" class="prettyprint lang-c"></pre>
+			</div>
+			<div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
+				<a class="btn btn-success d-link" href="./queue.java" download="queue.java" target="_blank">queue.java</a>
+				<a id="java-link" class="btn btn-success d-link"target="_blank">Download</a>
+				<pre id="java-code" class="prettyprint lang-java"></pre>
+			</div>
+			<div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
+				<a class="btn btn-success d-link" href="./queue.py" download="queue.py" target="_blank">queue.py</a>
+				<a id="py-link" class="btn btn-success d-link" target="_blank">Download</a>
+				<pre id="py-code" class="prettyprint lang-py"></pre> 
+			</div>
+		</div>
+	</div>
+	  	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
+    <script> 
+    	var fileName = 'tree.';
+		function readTextFile(file){
+		    var rawFile = new XMLHttpRequest();
+		    var allText = '';
+		    rawFile.open("GET", file, false);
+		    rawFile.onreadystatechange = function (){
+		        if(rawFile.readyState === 4)
+		        	if(rawFile.status === 200 || rawFile.status == 0)
+		                allText = rawFile.responseText;
+		    }
+		    rawFile.send(null);
+		    return allText;
+		}
+		let code = readTextFile(`./${fileName}c`);
+		$('#c-link')
+			.attr('href', `./${fileName}c`)
+			.attr('download', `${fileName}c`);
+		$('#c-code').text(code);
+
+		code = readTextFile(`./${fileName}java`);
+		$('#java-link')
+			.attr('href', `./${fileName}java`)
+			.attr('download', `${fileName}java`);
+		$('#java-code').text(code);
+
+		code = readTextFile(`./${fileName}py`);
+		$('#py-link')
+			.attr('href', `./${fileName}py`)
+			.attr('download', `${fileName}py`);
+		$('#py-code').text(code);
+	</script>
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $(".contain").hide(0).fadeIn(1000)
+        });
+    </script> 
+</body>
+</html>

@@ -12,7 +12,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class InterviewComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router) { 
+  	let body = document.getElementsByTagName('body');	
+		body[0].style.backgroundColor = "#fcfcfc";
+		body[0].style.color = "#3a3a3a";
+		this.scrollTop();
   }
+  scrollTop(){
+		window.scrollTo(0, 0);
+	}
   show: boolean = true;
   ngAfterViewInit(){
 		var acc = document.getElementsByClassName("accordion");
@@ -29,10 +36,30 @@ export class InterviewComponent implements OnInit {
 			});
 		}
 	}
-  ngOnInit(): void {
-  	if (window.screen.width < 720)
-         this.show = false;
+
+
+	showMenuBar(nav){
+		let sections = document.getElementsByClassName('section');
+		nav.classList.toggle("rotate");
+		let menu = document.getElementById('menu');
+		let header = document.getElementById('header');
+		if (menu.style.display === "none"){
+			menu.style.display = "block";
+			//this.setOpacity(sections, '0.3');
+			menu.style.opacity = '1';
+			nav.style.opacity = '1';
+		}
+		else{
+			menu.style.display = "none";
+			//this.setOpacity(sections, '1');
+		}
 	}
+	
+  	ngOnInit(): void {
+	  	if (window.screen.width < 720)
+	        this.show = false;
+	}
+	
   	private colors = {
 	  	'hackerrank': '#22B356',
 	  	'hackerearth': '#2C3454',
@@ -98,10 +125,10 @@ export class InterviewComponent implements OnInit {
   	{prev: 'i-4', desp: 'Elements of Programming Interviews',link: 'https://www.amazon.com/Elements-Programming-Interviews-Insiders-Guide/dp/1479274836'},
   	{prev: 'i-5', desp: 'The Google Resume',link: 'https://www.amazon.in/Google-Resume-Gayle-Laakmann-Mcdowell/dp/8126538058/'}]
    
-   resources = [{title: 'Web Resources',subtitle: 'Websites to help you learn.', resource: this.web_resources},
-   {title: 'Online Practice',subtitle: 'Websites to practice coding', resource: this.practice_links},
-   {title: 'Competitive Programming',subtitle: 'Websites for competitive programming', resource: this.compete_code_links},
-   {title: 'Youtube',subtitle: 'Useful youtube channels', resource: this.youtube_links},
-   {title: 'Mock interviews',subtitle: '', resource: this.interview_links},
+   resources = [{title1: 'Web', title2: ' Resources',subtitle: 'Websites to help you learn.', resource: this.web_resources},
+   {title1: 'Online', title2: ' Practice',subtitle: 'Websites to practice coding', resource: this.practice_links},
+   {title1: 'Competitive', title2: ' Programming',subtitle: 'Websites for competitive programming', resource: this.compete_code_links},
+   {title1: 'You', title2:'tube',subtitle: 'Useful youtube channels', resource: this.youtube_links},
+   {title1: 'Mock', title2:' interviews',subtitle: '', resource: this.interview_links},
    ]
 }

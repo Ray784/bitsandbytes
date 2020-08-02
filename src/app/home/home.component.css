@@ -77,7 +77,6 @@ a{
 	background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: scroll;
     transition: 0.2s;
 }
 .sectionButton{
@@ -135,7 +134,7 @@ a{
 		padding-left: 10vw;	
 	}
 	h2{
-		font-size: 11em;	
+		font-size: 9em;	
 	}
 	h3{
 		font-size: 6em;
