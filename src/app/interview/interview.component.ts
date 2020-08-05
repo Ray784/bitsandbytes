@@ -11,30 +11,46 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class InterviewComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) { 
-  	let body = document.getElementsByTagName('body');	
+  	constructor(private route: ActivatedRoute, private router: Router) { 
+  		let body = document.getElementsByTagName('body');	
 		body[0].style.backgroundColor = "#fcfcfc";
 		body[0].style.color = "#3a3a3a";
 		this.scrollTop();
-  }
-  scrollTop(){
+  	}
+ 	scrollTop(){
 		window.scrollTo(0, 0);
 	}
-  show: boolean = true;
-  ngAfterViewInit(){
-		var acc = document.getElementsByClassName("accordion");
-		var i;
-		for (i = 0; i < acc.length; i++) {
-			acc[i].addEventListener("click", function() {
-				this.classList.toggle("active");
-				var panel = this.nextElementSibling;
-				if (panel.style.maxHeight) {
-					panel.style.maxHeight = null;
-				} else {
-					panel.style.maxHeight = panel.scrollHeight + "px";
-				}
-			});
-		}
+ 	show: boolean = true;
+ 	prev_main= 0;
+
+	scrollDiv(direction){
+		let scroll = (document.getElementById('nav-bar').firstChild as HTMLElement).offsetWidth;
+		document.getElementById('nav-bar').scrollLeft += (scroll*direction*2 + 40);
+	}
+
+
+	showData(nav_event, idx){
+		let nav = nav_event.target;
+		let active_nav = document.getElementsByClassName('active')[0] as HTMLElement;
+		let ink_bar = document.getElementById('ink-bar');
+		active_nav.classList.remove('active');
+		nav.classList.add('active');
+		ink_bar.style.top = idx*50 + 'px';
+
+		let active_main = document.getElementsByClassName('main')[this.prev_main] as HTMLElement;
+		active_main.classList.add('hide'); 
+		this.prev_main = idx;
+
+		active_main = document.getElementsByClassName('main')[this.prev_main] as HTMLElement;
+		active_main.classList.remove('hide'); 
+	}
+
+	ngAfterViewInit(){
+		let active_nav = document.getElementById('nav-bar').firstChild as HTMLElement;
+		active_nav.classList.add('active');
+
+		let active_main = document.getElementsByClassName('main')[0] as HTMLElement;
+		active_main.classList.remove('hide');
 	}
 
 

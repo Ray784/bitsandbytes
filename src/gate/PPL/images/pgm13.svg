@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="600">
+		<g transform="translate(-120, 0)">	
+			<g transform="translate(300, 20)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<text x="22" y="30" font-family="Verdana">main()</text>
+				<g transform="translate(110, 10)">
+					<text x="0" y="20" font-family="Verdana">x</text>
+					<rect x="20" y="0" fill="#EFF0F3" width="120" height="30"/>
+
+					<text x="30" y="20" font-family="Verdana">10</text>
+					<line x1="30" y1="20" x2="40" y2="10" stroke="black"/>
+					<text x="60" y="20" font-family="Verdana">5</text>
+					<text x="20" y="50" font-family="Verdana">global variable</text>
+				</g>
+			</g>
+	
+			<line x1="350" y1="80" x2="230" y2="140" stroke="black"/>
+			
+			<g transform="translate(180, 150)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<text x="22" y="30" font-family="Verdana">printf(x): 5</text>
+			</g>
+	
+			<line x1="350" y1="80" x2="350" y2="140" stroke="black"/>
+			<!--function tag-->
+	
+			<line x1="350" y1="80" x2="470" y2="140" stroke="black"/>
+			<g transform="translate(420, 150)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<text x="22" y="30" font-family="Verdana">printf(x): 17</text>
+			</g>
+		</g>
+		<g transform="translate(-120, 130)">	
+			<g transform="translate(300, 20)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<text x="35" y="30" font-family="Verdana">P(5)</text>
+
+				<g transform="translate(-90, 70)">
+					<text x="0" y="20" font-family="Verdana">x: local</text>
+					<rect x="70" y="0" fill="#EFF0F3" width="40" height="30"/>
+
+					<text x="80" y="20" font-family="Verdana">7</text>
+				</g>
+				<g transform="translate(90, 70)">
+					<text x="5" y="20" font-family="Verdana">y: local</text>
+					<rect x="70" y="0" fill="#EFF0F3" width="40" height="30"/>
+
+					<text x="80" y="20" font-family="Verdana">5</text>
+					<line x1="80" y1="20" x2="90" y2="10" stroke="black"/>
+					<text x="95" y="20" font-family="Verdana">6</text>
+				</g>
+			</g>
+	
+			<line x1="350" y1="80" x2="270" y2="140" stroke="black"/>
+	
+			<line x1="350" y1="80" x2="430" y2="140" stroke="black"/>
+			<g transform="translate(380, 150)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<text x="6" y="30" font-family="Verdana">printf(x, y): 7, 6</text>
+			</g>
+		</g>
+		<g transform="translate(-200, 260)">	
+			<g transform="translate(300, 20)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<text x="35" y="30" font-family="Verdana">Q(7)</text>
+				<g transform="translate(-90, 70)">
+					<text x="0" y="20" font-family="Verdana">x: global</text>
+					<rect x="70" y="0" fill="#EFF0F3" width="40" height="30"/>
+
+					<text x="75" y="20" font-family="Verdana">5</text>
+					<line x1="75" y1="20" x2="85" y2="10" stroke="black"/>
+					<text x="90" y="20" font-family="Verdana">17</text>
+				</g>
+
+				<g transform="translate(90, 70)">
+					<text x="5" y="20" font-family="Verdana">z: local</text>
+					<rect x="70" y="0" fill="#EFF0F3" width="40" height="30"/>
+
+					<text x="75" y="20" font-family="Verdana">7</text>
+					<line x1="75" y1="20" x2="85" y2="10" stroke="black"/>
+					<text x="90" y="20" font-family="Verdana">12</text>
+				</g>
+			</g>
+	
+			<line x1="350" y1="80" x2="270" y2="140" stroke="black"/>
+			
+			<g transform="translate(220, 150)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<text x="22" y="30" font-family="Verdana">printf(z): 12</text>
+			</g>
+			
+			<line x1="350" y1="80" x2="430" y2="140" stroke="black"/>
+			<g transform="translate(380, 150)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<text x="22" y="30" font-family="Verdana">printf(x): 17</text>
+			</g>
+		</g>
+		<g transform="translate(120, 500)">
+			<text x="0" y="20" font-family="Verdana">x</text>
+			<rect x="20" y="0" fill="#EFF0F3" width="120" height="30"/>
+
+			<text x="30" y="20" font-family="Verdana">10</text>
+			<line x1="30" y1="20" x2="40" y2="10" stroke="black"/>
+			<text x="60" y="20" font-family="Verdana">5</text>
+			<line x1="60" y1="20" x2="70" y2="10" stroke="black"/>
+			<text x="80" y="20" font-family="Verdana">17</text>
+
+			<text x="20" y="50" font-family="Verdana">global variable</text>
+		</g>
+	</svg>

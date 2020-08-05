@@ -74,9 +74,6 @@ a{
 	height: 50vh;
 	border-radius: 2px; 
 	max-width: 90vh;
-	background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     transition: 0.2s;
 }
 .sectionButton{

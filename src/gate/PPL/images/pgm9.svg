@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="1000">
+		<g transform="translate(50, 50)">
+			<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+			<text x="22" y="30" font-family="Verdana">f(5)</text>
+			<g transform="translate(120, 10)">
+				<text x="0" y="20" font-family="Verdana">r</text>
+				<rect x="15" y="0" fill="#EFF0F3" width="120" height="30"/>
+
+				<text x="50" y="20" font-family="Verdana">0</text>
+				<line x1="50" y1="20" x2="60" y2="10" stroke="black"/>
+				<text x="70" y="20" font-family="Verdana">5</text>
+				<line x1="70" y1="20" x2="80" y2="10" stroke="black"/>
+				<text x="90" y="20" font-family="Verdana">4</text>
+				<text x="15" y="50" font-family="Verdana">static memory</text>
+			</g>
+		</g>
+		<g transform="translate(100, 110)">
+			<line x1="0" y1="0" x2="0" y2="80" stroke="black"/>
+			<path d="M 10 0 C 20 30, 20 50, 10 80" stroke="black" fill="none" stroke-dasharray="5, 5"/>
+			<text x="20" y="45" font-family="Verdana">21</text>
+		</g>
+		<g transform="translate(50, 200)">
+			<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+			<text x="22" y="30" font-family="Verdana">f(4)</text>
+
+			<g transform="translate(120, 10)">
+				<text x="-10" y="20" font-family="Verdana">+</text>
+				<rect x="15" y="0" fill="#EFF0F3" width="30" height="30"/>
+				<text x="27" y="20" font-family="Verdana">r</text>
+			</g>
+		</g>
+		<g transform="translate(100, 260)">
+			<line x1="0" y1="0" x2="0" y2="80" stroke="black"/>
+			<path d="M 10 0 C 20 30, 20 50, 10 80" stroke="black" fill="none" stroke-dasharray="5, 5"/>
+			<text x="20" y="45" font-family="Verdana">17</text>
+		</g>
+		<g transform="translate(50, 350)">
+			<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+			<text x="22" y="30" font-family="Verdana">f(3)</text>
+			<g transform="translate(120, 10)">
+				<text x="-10" y="20" font-family="Verdana">+</text>
+				<rect x="15" y="0" fill="#EFF0F3" width="30" height="30"/>
+				<text x="27" y="20" font-family="Verdana">r</text>
+			</g>
+		</g>
+		<g transform="translate(100, 410)">
+			<line x1="0" y1="0" x2="0" y2="80" stroke="black"/>
+			<path d="M 10 0 C 20 30, 20 50, 10 80" stroke="black" fill="none" stroke-dasharray="5, 5"/>
+			<text x="20" y="45" font-family="Verdana">13</text>
+		</g>
+		<g transform="translate(50, 500)">
+			<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+			<text x="22" y="30" font-family="Verdana">f(2)</text>
+			<g transform="translate(120, 10)">
+				<text x="-10" y="20" font-family="Verdana">+</text>
+				<rect x="15" y="0" fill="#EFF0F3" width="30" height="30"/>
+				<text x="27" y="20" font-family="Verdana">r</text>
+			</g>
+		</g>
+		<g transform="translate(100, 560)">
+			<line x1="0" y1="0" x2="0" y2="80" stroke="black"/>
+			<path d="M 10 0 C 20 30, 20 50, 10 80" stroke="black" fill="none" stroke-dasharray="5, 5"/>
+			<text x="20" y="45" font-family="Verdana">9</text>
+		</g>
+		<g transform="translate(50, 650)">
+			<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+			<text x="22" y="30" font-family="Verdana">f(1)</text>
+			<g transform="translate(120, 10)">
+				<text x="-10" y="20" font-family="Verdana">+</text>
+				<rect x="15" y="0" fill="#EFF0F3" width="30" height="30"/>
+				<text x="27" y="20" font-family="Verdana">r</text>
+			</g>
+		</g>
+		<g transform="translate(100, 710)">
+			<line x1="0" y1="0" x2="0" y2="80" stroke="black"/>
+			<path d="M 10 0 C 20 30, 20 50, 10 80" stroke="black" fill="none" stroke-dasharray="5, 5"/>
+			<text x="20" y="45" font-family="Verdana">5</text>
+		</g>
+		<g transform="translate(50, 800)">
+			<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+			<text x="22" y="30" font-family="Verdana">f(0)</text>
+			<g transform="translate(120, 10)">
+				<text x="-10" y="20" font-family="Verdana">+</text>
+				<rect x="15" y="0" fill="#EFF0F3" width="30" height="30"/>
+				<text x="27" y="20" font-family="Verdana">r</text>
+			</g>
+		</g>
+		<path d="M 75 860 C 90 900, 110 900, 125 860" stroke="black" fill="none" stroke-dasharray="5, 5"/>
+		<text x="95" y="887" font-family="Verdana">1</text>
+	</svg>

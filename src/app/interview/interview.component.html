@@ -1,4 +1,4 @@
-<div class="body">
+<!--<div class="body">
 	<div class="navButton" #navButton (click)="showMenuBar(navButton)">
 			<div></div>
 			<div></div>
@@ -22,6 +22,61 @@
 					</div> 
 				</div>
 			</div>
+		</div>
+	</div>
+</div>-->
+
+<div class="body">
+	<br>
+	<div class="navButton" #navButton (click)="showMenuBar(navButton)">
+		<div></div>
+		<div></div>
+	</div>
+	<div id="menu" class="menubar" style="display: none;">
+		<div><a routerLink = "blog">Blog</a></div>
+		<div><a>About</a></div>
+		<div><a href="https://www.jntuhceh.ac.in" target="_blank">University</a></div>
+	</div>
+	<div class="section">
+		<h1>Interview <span class="part2">Preparation</span></h1>
+	</div>
+	<br>
+	<br>
+	<div class="section">
+		<div class="mobile">
+			<div class="nav-btn btn" (click)="scrollDiv(-1)"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></div>
+			<div class="sidebar" id="nav-bar">
+				<div class="nav-btn" *ngFor="let resource of resources; index as i;" (click)="showData($event, i)">{{resource.title1}} {{resource.title2}}</div>
+				<div class="nav-btn" (click)="showData($event, resources.length)">Books</div>
+				<div id="ink-bar"></div>
+			</div>
+			<div class="nav-btn btn" (click)="scrollDiv(+1)"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"></path></svg></div>
+		</div>
+		<div class="main hide" *ngFor="let resource of resources">
+			<div class="card" *ngFor="let link of resource.resource">
+				<div class="head">
+					<img src="assets/logo/{{link.avatar}}">
+				</div>
+				<div class="details">
+					<p  [innerHTML] = link.desp></p>
+					<div class="button-holder">
+						<button style=" background-color: {{link.color}}"><a href="{{link.link}}" target="_blank" >Click Here!</a></button>
+					</div>
+				</div>
+ 			</div>
+		</div>
+		<div class="main hide">
+			<div class="card" *ngFor="let book of book_links">
+				<div class="head" style="height: 250px;">
+					<img style="width: 250px;" src="assets/book-prev/{{book.prev}}.jpg">
+				</div>
+				<div class="details">
+					<p  [innerHTML] = book.desp></p>
+					<div class="button-holder">
+						<button><a href="{{book.link}}" target="_blank" >Click Here!</a></button>
+					</div>
+				</div>
+ 			</div>
 		</div>
 	</div>
 </div>

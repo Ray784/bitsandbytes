@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="750">
+		<g>
+			<g transform="translate(100, 200)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2"/>
+				<text x="35" y="30" font-family="Verdana">f(3)</text>
+			</g>
+			<g transform="translate(100, 251)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2"/>
+				<text x="35" y="30" font-family="Verdana">f(2)</text>
+			</g>
+			<g transform="translate(100, 302)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2"/>
+				<text x="35" y="30" font-family="Verdana">f(1)</text>
+			</g>
+			<g transform="translate(100, 353)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2"/>
+				<text x="35" y="30" font-family="Verdana">f(0)</text>
+				<line x1="10" y1="10" x2="90" y2="40" stroke="black" stroke-width="1" stroke-dasharray="5,5"/>
+			</g>
+			<g transform="translate(200, 353)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2"/>
+				<text x="35" y="30" font-family="Verdana">f(0)</text>
+				<line x1="10" y1="10" x2="90" y2="40" stroke="black" stroke-width="1" stroke-dasharray="5,5"/>
+			</g>
+			<g transform="translate(300, 353)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="50"/>
+				<line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2"/>
+				<text x="35" y="30" font-family="Verdana">f(0)</text>
+			</g>
+			<text x="35" y="30" transform="rotate(270 200,150)" font-family="Verdana">stack</text>
+		</g>
+		<g transform="translate(0, 204)">
+			<g transform="translate(100, 200)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="150"/>
+				<line x1="0" y1="150" x2="100" y2="150" stroke="black" stroke-width="2"/>
+			</g>
+			<text x="35" y="30" transform="rotate(270 200,150)" font-family="Verdana">heap</text>
+		</g>
+		<g transform="translate(0, 355)">
+			<g transform="translate(100, 200)">
+				<rect x="0" y="0" fill="#EFF0F3" width="100" height="150"/>
+				<line x1="0" y1="150" x2="100" y2="150" stroke="black" stroke-width="2"/>
+			</g>
+			<text x="35" y="30" transform="rotate(270 200,150)" font-family="Verdana">static</text>
+		</g>
+	</svg>

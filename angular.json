@@ -20,6 +20,10 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              //gate
+              { "glob": "*.html", "input": "src/gate/PPL/", "output": "/gate/PPL" },
+              { "glob": "*.png", "input": "src/gate/PPL/images", "output": "/gate/PPL/images" },
+              { "glob": "*.svg", "input": "src/gate/PPL/images", "output": "/gate/PPL/images" },
               //main
               { "glob": "*.js", "input": "src/ds-visuals/", "output": "/ds-visuals/" },
               { "glob": "*.css", "input": "src/ds-visuals/", "output": "/ds-visuals/" },
