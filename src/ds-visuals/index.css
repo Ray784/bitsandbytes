@@ -59,7 +59,8 @@ body{
 }
 
 .speed{
-  margin-bottom: 10px;
+  width: auto;
+  justify-content: center;
 }
  
 a.btn{
@@ -180,8 +181,8 @@ html {
   padding: 20px;
   margin: 10px;
   text-align: center;
-  background-color: #2F3129;
-  color: #fcfcfc;
+  background-color: #f3f4f8;
+  color: #3a3a3a;
   border: 0px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   transition: 0.3s;
@@ -207,18 +208,22 @@ svg{
 
 
 .btn-p{
-  background-color: #3F51B5;
+  background-color: #425164;
+  color: #f3f4f8;
 }
 .btn-p:hover{
-  background-color: #5462b0;
+  background-color: #313d4d;
+  color: #f3f4f8;
 }
 .btn-p:focus{
-  background-color: #3F51B5;
+  background-color: #313d4d;
 }
 
 .btn-p:active{
-  background-color: #3F51B5;
+  background-color: #313d4d;
+  outline: none;
 }
+
 
 .notif-btn{
   background: none;

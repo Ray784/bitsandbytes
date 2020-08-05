@@ -28,11 +28,11 @@ class Queue{
 			<div class="row">
 				<button class="btn">Queue Operation 1: </button>
 				<input class="form-control row-holder" type="number" id="ins_val_${data}">
-				<button class="btn btn-primary row-holder" onclick="enq_handler(${data})">Enqueue</button>
+				<button class="btn btn-p row-holder" onclick="enq_handler(${data})">Enqueue</button>
 			</div>
 			<div class="row">
 				<button class="btn">Queue Operation 2: </button>
-				<button class="btn btn-primary row-holder" onclick="deq_handler(${data})">Dequeue</button>
+				<button class="btn btn-p row-holder" onclick="deq_handler(${data})">Dequeue</button>
 			</div></div>`
 		$('#operations .alert').remove();
 		$('#operations').append(control_string);
@@ -86,7 +86,7 @@ function prepareSVGQ(queue){
 		.attr('markerHeight','3.5')
 		.attr('refX', 1)
 		.attr('refY', 2)
-		.attr('fill', '#3F51B5')
+		.attr('fill', '#425164')
 		.attr('orient', 'auto');
 	marker.append('polygon')
 		.attr('points', '0 0, 5 1.75, 0 3.5');
@@ -96,7 +96,7 @@ function prepareSVGQ(queue){
 		.attr('x2', -elementWidth * 0.3)
 		.attr('y1', elementWidth*0.3)
 		.attr('y2', 0)
-		.attr('stroke', '#3F51B5')
+		.attr('stroke', '#425164')
 		.attr('marker-end', 'url(#arrow)')
 		.style('transform', 'rotate(90deg)')
 		.attr('stroke-width', elementStroke);
@@ -112,7 +112,7 @@ function prepareSVGQ(queue){
 		.attr('x2', -elementWidth * 0.3)
 		.attr('y1', -elementWidth * 0.3)
 		.attr('y2', 0)
-		.attr('stroke', '#3F51B5')
+		.attr('stroke', '#425164')
 		.attr('marker-end', 'url(#arrow)')
 		.style('transform', 'rotate(90deg)')
 		.attr('stroke-width', elementStroke);
@@ -242,7 +242,7 @@ async function enqueue(queue, data){
 		moveElementTo(element, top_rad_q.x + y, top_rad_q.y);
 		await highlight_line('q', 5, 'enqueue');
 		
-		showElement(element, 'rect', '#3F51B5');
+		showElement(element, 'rect', '#ff6528');
 
 	}
 

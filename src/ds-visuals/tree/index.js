@@ -78,7 +78,7 @@ function prepareSVGTree(tree){
 		.attr('markerHeight','3.5')
 		.attr('refX', 1)
 		.attr('refY', 2)
-		.attr('fill', '#3F51B5')
+		.attr('fill', '#ff6528')
 		.attr('orient', 'auto');
 	marker.append('polygon')
 		.attr('points', '0 0, 5 1.75, 0 3.5');
@@ -87,7 +87,7 @@ function prepareSVGTree(tree){
 		.attr('x2', width / 2 - 2*circleRadius)
 		.attr('y1', yOffset / 2)
 		.attr('y2', yOffset)
-		.attr('stroke', '#3F51B5')
+		.attr('stroke', '#ff6528')
 		.attr('marker-end', 'url(#arrow)')
 		.attr('stroke-width', circleStroke);
 	(tree.svg).append('text')
@@ -201,7 +201,7 @@ async function addNode(tree, root, data, prev_x, prev_y, x, y, level){
 		let newNode = new TreeNode(data);
 		node = getNode(tree, data);
 		moveElementTo(node, x, y);
-		showElement(node, 'circle', '#3F51B5');
+		showElement(node, 'circle', '#ff6528');
 		
 		await highlight_line('tree', 7, 'insert_tree');
 		if(prev_x != 0 && prev_y != 0)
@@ -273,7 +273,7 @@ async function deleteBST(tree, data){
 async function deleteNode(tree, root, data, x, y, level){
 	document.getElementById(tree.svg.attr('id')).scrollIntoView();
 	moveElementTo(traverser, x, y);
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 
 	show_code(tree_codes, 'delete_tree');
 	await highlight_lines('tree', 1, 2, 'delete_tree');
@@ -417,7 +417,7 @@ async function inorder(tree){
 	$('button').prop('disabled', true);
 	$('#scroller').show();
 	traverser = getTraverser(tree);
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 	$(window).scrollTop(0);
 	let temp = new TreeNode('#');
 
@@ -444,7 +444,7 @@ async function inorder_tree(tree, root, x, y, level, stack){
 	}
 	await highlight_line('tree', 3, 'inorder');
 	
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 	
 	await push(stack, root);
 	show_code(tree_codes, 'inorder');
@@ -460,7 +460,7 @@ async function inorder_tree(tree, root, x, y, level, stack){
 	await highlight_line('tree', 4, 'inorder');
 	
 	await highlight_line('tree', 5, 'inorder');
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 
 	await push(stack, root);
 	show_code(tree_codes, 'inorder');
@@ -487,7 +487,7 @@ async function preorder(tree){
 	$('#scroller').show();
 	$('button').prop('disabled', true);
 	traverser = getTraverser(tree);
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 	$(window).scrollTop(0);
 	let temp = new TreeNode('#');
 	var stack = await createStack([temp], 'data');
@@ -516,7 +516,7 @@ async function preorder_tree(tree, root, x, y, level, stack){
 	moveElementTo(traverser, x, y);
 	$('#output .alert').append(root.data+' ')
 	await highlight_lines('tree', 3, 4,'preorder');
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 
 	await push(stack, root);
 	show_code(tree_codes, 'preorder');
@@ -528,7 +528,7 @@ async function preorder_tree(tree, root, x, y, level, stack){
 	moveElementTo(traverser, x, y);
 	
 	await highlight_line('tree', 5, 'preorder');
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 	await push(stack, root);
 	show_code(tree_codes, 'preorder');
 
@@ -555,7 +555,7 @@ async function postorder(tree){
 	$('#scroller').show();
 	$('button').prop('disabled', true);
 	traverser = getTraverser(tree);
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 	$(window).scrollTop(0);
 	let temp = new TreeNode('#');
 	var stack = await createStack([temp], 'data');
@@ -582,7 +582,7 @@ async function postorder_tree(tree, root, x, y, level, stack){
 	}
 	
 	await highlight_line('tree', 3, 'postorder');
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 	moveElementTo(traverser, x, y);
 
 	await push(stack, root);
@@ -596,7 +596,7 @@ async function postorder_tree(tree, root, x, y, level, stack){
 	
 	await highlight_line('tree', 4, 'postorder');
 	moveElementTo(traverser, x, y);
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 
 	await push(stack, root);
 	show_code(tree_codes, 'postorder');
@@ -629,7 +629,7 @@ async function levelorder(tree){
 	$('#scroller').show();
 	$('button').prop('disabled', true);
 	traverser = getTraverser(tree);
-	showElement(traverser, 'circle', '#3F51B5');
+	showElement(traverser, 'circle', '#ff6528');
 	$(window).scrollTop(0);
 	$('#output').empty();
 	await levelorder_tree(tree.root);

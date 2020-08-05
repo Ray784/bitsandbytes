@@ -18,22 +18,8 @@
 	<link rel="stylesheet" type="text/css" href="./index.css">
 </head>
 <body>
-	<nav class="navbar" style="background-color: white; padding: 10px; height: 74px; color: black;">
-		<button class="left notif-btn" onclick="window.location = '../'"><span class="material-icons" >bubble_chart</span><font style="font-size: 13px;">DS</font></button>
-		<div class="speed center">
-			<button class="btn">Visualisation<br>speed</button>:
-			<a class="btn btn-info" id="speed_0_1x" onclick="setSpeed(speed_0_1x, $(this))">0.1x</a>
-			<a class="btn btn-info" id="speed_0_5x" onclick="setSpeed(speed_0_5x, $(this))">0.5x</a>
-			<a class="btn btn-info" id="speed_1x" onclick="setSpeed(speed_1x, $(this))">1x</a>
-			<a class="btn btn-info disabled" id="speed_2x" onclick="setSpeed(speed_2x, $(this))">2x</a>
-			<a class="btn btn-info" id="speed_3x" onclick="setSpeed(speed_3x, $(this))">3x</a>
-			<a class="btn btn-info" id="speed_10x" onclick="setSpeed(speed_10x, $(this))">10x</a>
-			<a class="btn btn-info" id="speed_x" onclick="setSpeed(speed_x, $(this))">100x</a>
-		</div>
-		<button class="right notif-btn" onclick="window.location = '../../#/home'"><span class="material-icons" >home</span><font style="font-size: 13px;">Home</font></button>
-	</nav>
 	<br>
-	<button class="btn btn-scroll bounce btn-primary" id="scroll" onclick="$(window).scrollTop($(window).height());"><img class="img-scroll"></button>
+	<button class="btn btn-scroll bounce btn-p" id="scroll" onclick="$(window).scrollTop($(window).height());"><img class="img-scroll"></button>
 	<div class="contain ">
 		<div class="row col-md-12 col-sm-12 col-xs-12">
 			<div class="card base visualizer col-md">
@@ -51,6 +37,23 @@
 	<br>
 	<div class="contain">
 		<div class="row col-md-12">
+			<div class="card col-md">
+				<div class="speed center">
+					<button class="btn">Visualisation<br>speed</button>:
+					<a class="btn btn-p" id="speed_0_1x" onclick="setSpeed(speed_0_1x, $(this))">0.1x</a>
+					<a class="btn btn-p" id="speed_0_5x" onclick="setSpeed(speed_0_5x, $(this))">0.5x</a>
+					<a class="btn btn-p" id="speed_1x" onclick="setSpeed(speed_1x, $(this))">1x</a>
+					<a class="btn btn-p disabled" id="speed_2x" onclick="setSpeed(speed_2x, $(this))">2x</a>
+					<a class="btn btn-p" id="speed_3x" onclick="setSpeed(speed_3x, $(this))">3x</a>
+					<a class="btn btn-p" id="speed_10x" onclick="setSpeed(speed_10x, $(this))">10x</a>
+					<a class="btn btn-p" id="speed_x" onclick="setSpeed(speed_x, $(this))">100x</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="contain">
+		<div class="row col-md-12">
 			<div class="card col-md" id="create">
 				<h5>Create a new Stack</h5><hr>
 				<div class="row" id="create_form">
@@ -59,7 +62,7 @@
 					<a id="removeNewInput" style="display: none; margin: 3px;"><i class="material-icons addNew">remove_circle_outline</i></a>
 					<input class="form-control row-holder" type="number" id="create_val_1">
 				</div>
-				<button class="btn btn-primary row-holder center" onclick="create_handler()">Create</button>
+				<button class="btn btn-p row-holder center" onclick="create_handler()">Create</button>
 			</div>
 
 			<div class="card col-md" id="operations">
@@ -72,14 +75,14 @@
 			<div class="card col-md" id="applications">
 				<h5>Application of Stacks</h5><hr>
 				<div class="row center">
-					<a href="./application/inToPost/index.html" class="btn btn-warning" target="_blank" style="color: white; margin: 10px;">Infix to Postfix</a>
-					<a href="./application/evaluation/index.html" class="btn btn-warning" target="_blank" style="color: white; margin: 10px;">Infix Evaluation</a>
+					<a href="./application/inToPost/index.html" class="btn btn-p" target="_blank" style="color: white; margin: 10px;">Infix to Postfix</a>
+					<a href="./application/evaluation/index.html" class="btn btn-p" target="_blank" style="color: white; margin: 10px;">Infix Evaluation</a>
 				</div>
 			</div>
 
 			<div class="card col-md" id="codes" role="tabpanel" aria-labelledby="code-tab">
 				<h5>Implementation codes</h5><hr>
-				<a class="btn btn-primary center" href="./code/index.html" target="_blank">click here to obtain codes.</a>
+				<a class="btn btn-p center" href="./code/index.html" target="_blank">click here to obtain codes.</a>
 			</div>
 		</div>
 	</div>

@@ -82,16 +82,6 @@ function setUpPositions(){
 
 function prepareSVGHeap(heap){
 	$(`#mxhp_${heap.id}`).empty();
-	marker = (heap.svg).append('defs').append('marker')
-		.attr('id', 'arrow')
-		.attr('markerWidth', '5')
-		.attr('markerHeight','3.5')
-		.attr('refX', 1)
-		.attr('refY', 2)
-		.attr('fill', '#3F51B5')
-		.attr('orient', 'auto');
-	marker.append('polygon')
-		.attr('points', '0 0, 5 1.75, 0 3.5');
 }
 
 async function swap(heap, pos1, pos2, run){
@@ -115,8 +105,8 @@ async function swap(heap, pos1, pos2, run){
 		pos1_elem.remove();
 	}
 
-	showElement(pos1_elem, 'circle', '#3F51B5');
-	showElement(pos2_elem, 'circle', '#3F51B5');
+	showElement(pos1_elem, 'circle', '#ff6528');
+	showElement(pos2_elem, 'circle', '#ff6528');
 }
 
 async function create_handler(){
@@ -139,12 +129,12 @@ async function create_handler(){
 }
 
 async function createMaxHeap(arr){
-	document.getElementById(heap.svg.attr('id')).scrollIntoView();
 	$('#scroller').show();
 	show_code(mxheap_codes, 'create_mxheap');
 	$('button').prop('disabled', true);
 	await highlight_lines('mxheap', 1, 3, 'create_mxheap');
 	let heap = new MaxHeap(heaps.length);
+	document.getElementById(heap.svg.attr('id')).scrollIntoView();
 	heap.arr[0] = Number.MAX_VALUE;
 	heap.heap_size = 0;
 	prepareSVGHeap(heap);
@@ -204,7 +194,7 @@ async function insertMaxHeap(heap, data){
 	
 	node = getNode(heap, data);
 	moveElementTo(node, posX[heap.heap_size+1], posY[heap.heap_size+1]);
-	showElement(node, 'circle', '#3F51B5');
+	showElement(node, 'circle', '#ff6528');
 	heap.arr[++heap.heap_size] = data;
 	await highlight_line('mxheap', 5, 'insert_mxheap');
 	

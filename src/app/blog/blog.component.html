@@ -1,1 +1,35 @@
-<p>blog works!</p>
+<div class = "body">
+	<div class="navButton" #navButton (click)="showMenuBar(navButton)">
+		<div></div>
+		<div></div>
+	</div>
+	<div id="menu" class="menubar" style="display: none;">
+		<div><a routerLink = "../">Home</a></div>
+		<div><a>About</a></div>
+		<div><a href="https://www.jntuhceh.ac.in" target="_blank">University</a></div>
+	</div>
+	<div class="section">
+		<h3>Find notes to help you with <br><span class="part2">Gate and Interview preparation</span></h3>
+	</div>
+	<div class="centered">
+		<ul>
+			<li>
+				<div class="image">
+					<span class="helper"></span>
+					<a><img src="assets/ppl.jpg"></a>
+				</div>
+				<div>
+					<h2>Principles of Programming Languages</h2>
+					<p>A programming language is a notation for writing programs which are specifications of a computation or an algorithm. Principles of programming languages is an important topic for GATE as well as for interviews. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<button><a href="#">Click here for notes</a></button>
+				</div>
+			</li>
+			<li></li>
+		</ul>
+	</div>
+</div>

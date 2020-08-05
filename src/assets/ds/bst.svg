@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" style="background-color: #DDDDDB; font-family: sans-serif;">
+	<g transform="translate(383, 235) rotate(-15)">
+ 		<path fill="#f3f4f8" d="M39,-49.3C51.6,-44.6,63.4,-34.5,65.5,-22.6C67.6,-10.6,59.9,3.2,55.7,18.7C51.4,34.2,50.7,51.5,42,55.8C33.3,60.1,16.7,51.5,4.1,45.8C-8.4,40.1,-16.8,37.4,-27.4,33.7C-38,30,-50.8,25.3,-55.2,16.8C-59.6,8.2,-55.7,-4.3,-54.4,-20.5C-53,-36.7,-54.3,-56.6,-45.7,-62.5C-37,-68.4,-18.5,-60.3,-2.6,-56.7C13.3,-53.1,26.5,-53.9,39,-49.3Z" transform="scale(4.5, 3.2)"/>
+ 	</g>
+ 	<g transform="translate(15, 50)">
+	 	<line stroke="#425164" stroke-width="3.25" x1="325" x2="162.5" y1="65" y2="130"/>
+	 	<line stroke="#425164" stroke-width="3.25" x1="568.75" x2="528.125" y1="195" y2="260"/>
+	 	<line stroke="#425164" stroke-width="3.25" x1="487.5" x2="568.75" y1="130" y2="195"/>
+	 	<line stroke="#425164" stroke-width="3.25" x1="325" x2="487.5" y1="65" y2="130"/>
+	 	<g transform="translate(325, 65)">
+	 		<circle fill="#ff6528" r="19.5"/>
+	 		<text y="4.0625" fill="#fcfcfc"><tspan text-anchor="middle">11</tspan></text>
+	 	</g>
+	 	<g transform="translate(487.5, 130)">
+	 		<circle fill="#ff6528" r="19.5"/>
+	 		<text y="4.0625" fill="#fcfcfc"><tspan text-anchor="middle">12</tspan></text>
+	 	</g>
+	 	<g transform="translate(568.75, 195)">
+	 		<circle fill="#ff6528" r="19.5"/>
+	 		<text y="4.0625" fill="#fcfcfc"><tspan text-anchor="middle">14</tspan></text>
+	 	</g>
+	 	<g transform="translate(528.125, 260)">
+	 		<circle fill="#ff6528" r="19.5"/>
+	 		<text y="4.0625" fill="#fcfcfc"><tspan text-anchor="middle">13</tspan></text>
+	 	</g>
+	 	<g transform="translate(162.5, 130)">
+	 		<circle fill="#ff6528" r="19.5"/>
+	 		<text y="4.0625" fill="#fcfcfc"><tspan text-anchor="middle">8</tspan></text>
+	 	</g>
+	 </g>
+</svg>

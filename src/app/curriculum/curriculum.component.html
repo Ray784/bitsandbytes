@@ -9,21 +9,33 @@
 		<div><a>About</a></div>
 		<div><a href="https://www.jntuhceh.ac.in" target="_blank">University</a></div>
 	</div>
-	<div class="section" *ngFor="let sem of sems">
-		<h1>{{sem.year}} <span class="part2">{{sem.sem}}</span></h1>
-		<div *ngFor="let subject of sem.subs; let i = index" [attr.data-index] = "i">
-			<button class="accordion">{{subject}}</button>
-			<div class="panel">
-				&nbsp;
-				<div class="cover" *ngFor="let book of sem.books[i]">
-		  			<img src="assets/book-prev/{{book.prev}}.jpg">
-					<div class="content" >
-						<h4 [innerHTML] = book.desp></h4>
-						<a class="btn" href="{{book.link}}" target="_blank"> Buy </a>
-						<a class="btn" href="{{book.pdf}}" target="_blank"> Pdf Download!</a>
-					</div> 
-				</div>
+	<div class="section">
+		<h1>FIND JNTUH PRESCRIBED BOOKS <br><span class="part2">FOR BUYING VIA AMAZON OR DOWNLOAD PDF FROM FREE LIBRARY.</span></h1>
+	</div>
+	<br>
+	<br>
+	<div class="section">
+		<div class="mobile">
+			<div class="nav-btn btn" (click)="scrollDiv(-1)"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></div>
+			<div class="sidebar" id="nav-bar">
+				<div class="nav-btn" *ngFor="let sem of sems; index as i;" (click)="showData($event, i)">{{sem.year}} {{sem.sem}}</div>
+				<div id="ink-bar"></div>
 			</div>
+			<div class="nav-btn btn" (click)="scrollDiv(+1)"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"></path></svg></div>
+		</div>
+		<div class="main hide" *ngFor="let sem of sems">
+			<div class="card" *ngFor="let book of sem.books">
+				<div class="head">
+					<img src="assets/book-prev/{{book.prev}}.jpg">
+				</div>
+				<div class="details">
+					{{book.desp}}
+					<div class="button-holder">
+						<button><a href="{{book.link}}" target="_blank">BUY</a></button>
+						<button><a href="{{book.pdf}}" target="_blank">PDF</a></button>
+					</div>
+				</div>
+ 			</div>
 		</div>
 	</div>
 </div>

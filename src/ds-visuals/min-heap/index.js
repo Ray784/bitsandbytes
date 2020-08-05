@@ -82,16 +82,6 @@ function setUpPositions(){
 
 function prepareSVGHeap(heap){
 	$(`#mnhp_${heap.id}`).empty();
-	marker = (heap.svg).append('defs').append('marker')
-		.attr('id', 'arrow')
-		.attr('markerWidth', '5')
-		.attr('markerHeight','3.5')
-		.attr('refX', 1)
-		.attr('refY', 2)
-		.attr('fill', '#3F51B5')
-		.attr('orient', 'auto');
-	marker.append('polygon')
-		.attr('points', '0 0, 5 1.75, 0 3.5');
 }
 
 async function swap(heap, pos1, pos2, run){
@@ -115,8 +105,8 @@ async function swap(heap, pos1, pos2, run){
 		pos1_elem.remove();
 	}
 
-	showElement(pos1_elem, 'circle', '#3F51B5');
-	showElement(pos2_elem, 'circle', '#3F51B5');
+	showElement(pos1_elem, 'circle', '#ff6528');
+	showElement(pos2_elem, 'circle', '#ff6528');
 }
 
 async function create_handler(){
@@ -141,11 +131,11 @@ async function create_handler(){
 
 async function createMinHeap(arr){
 	$('#scroller').show();
-	document.getElementById(heap.svg.attr('id')).scrollIntoView();
 	show_code(mnheap_codes, 'create_mnheap');
 	$('button').prop('disabled', true);
 	await highlight_lines('mnheap', 1, 3, 'create_mnheap');
-	let heap = new MaxHeap(mnheaps.length);
+	let heap = new MaxHeap(heaps.length);
+	document.getElementById(heap.svg.attr('id')).scrollIntoView();
 	heap.arr[0] = Number.MIN_VALUE;
 	heap.heap_size = 0;
 	prepareSVGHeap(heap);
@@ -167,11 +157,11 @@ async function createMinHeap(arr){
 }
 
 async function insert_handler(i){
-	if(mnheaps.length>0){
+	if(heaps.length>0){
 		let data = parseFloat($('#ins_val_'+i).val());
 		if(!isNaN(data))
-			await insertMinHeap(mnheaps[i], data);
-		else
+			await insertMinHeap(heaps[i], data);
+		elsE
 			throwError('.code-viewer', 'Enter some Input', 'danger');
 	}
 	else
@@ -207,7 +197,7 @@ async function insertMinHeap(heap, data){
 	
 	node = getNode(heap, data);
 	moveElementTo(node, posX[heap.heap_size+1], posY[heap.heap_size+1]);
-	showElement(node, 'circle', '#3F51B5');
+	showElement(node, 'circle', '#ff6528');
 	heap.arr[++heap.heap_size] = data;
 	await highlight_line('mnheap', 5, 'insert_mnheap');
 	
@@ -235,8 +225,8 @@ async function insertMinHeap(heap, data){
 }
 
 async function delete_handler(i){
-	if(mnheaps.length>0)
-		await deleteMinHeap(mnheaps[i]);
+	if(heaps.length>0)
+		await deleteMinHeap(heaps[i]);
 	else
 		throwError('.visualizer', 'Create a heap first!', 'danger');
 }

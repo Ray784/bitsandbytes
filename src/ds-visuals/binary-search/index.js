@@ -14,7 +14,7 @@ var sortedList = [];
 
 binsrch_code_urls = {
 	'bin-srch': baseUrl+'/snippets/binary-search/search', 
-}
+};
 
 binsrch_codes = ['none', 'bin-srch'];
 
@@ -25,13 +25,13 @@ function getArrElement(svg, data, idx){
 	const nodeG = svg.append('g')
 		.attr('transform',`translate(0, 0)`);
 	nodeG.append('rect')
-			.attr('fill', '#EFF0F3')
-			.attr('width', elementWidth)
-			.attr('height', elementWidth *0.6)
-			.attr('stroke', '#3F51B5')
-			.attr('stroke-width', elementStroke);
+			.attr('fill', '#ff6528')
+			.attr('width', elementWidth+elementStroke)
+			.attr('height', elementWidth *0.6 + elementStroke)
+			.attr('rx', 5)
 	nodeG.append('text')
-		.attr('y', elementWidth*0.3)
+		.attr('fill', '#fcfcfc')
+		.attr('y', elementWidth*0.4)
 		.attr('x', elementWidth / 2)
 		.append('tspan')
 			.attr('text-anchor','middle')
@@ -65,7 +65,7 @@ function create_handler(){
 		var text = $('#create_val_'+i).val();
 		text = parseFloat(text);
 		if(!isNaN(text)){	
-			$('.alert').remove();
+			$('.visualizer .alert').remove();
 			create_call = 1;
 			addElement(text);
 		}
@@ -96,7 +96,6 @@ async function search_handler(){
 		text = parseFloat(text);
 		if(!isNaN(text)){
 			pos = await binarySearch(sortedList, text);
-			console.log(pos);
 		}
 		else
 			throwError('.visualizer', 'Enter one input to search', 'danger');
@@ -111,6 +110,7 @@ function getY(idx) {return startOffset + elementWidth * parseInt(idx / 7);}
 
 async function binarySearch(arr, x){  
 	$('#scroller').show();
+	show_code(binsrch_codes, 'bin-srch');
 	let low = 0;
 	let high = arr.length - 1;
 	let mid = 0;

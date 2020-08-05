@@ -237,11 +237,14 @@ async function prepare_code(ds, codes){
 }
 
 function show_code(codes, code){
-	for(let i in codes)
+	console.log(document.getElementById(code));
+	console.log($('#'+code));
+	for(let i in codes){
 		if(codes[i] == code)
 			$('#'+code).css('display', 'block');
 		else
 			$('#'+codes[i]).css('display', 'none');
+	}
 }
 
 function throwError(base, error, class_val){
@@ -311,7 +314,7 @@ window.onscroll = function() {
 
 function makeLine(tree, x1, y1, x2, y2){
 	(tree.svg).insert("line",":first-child")
-		.attr('stroke', '#EFF0F3')
+		.attr('stroke', '#425164')
 		.attr('stroke-width', circleStroke)
 		.attr('x1', x1)
 		.attr('x2', x2)
@@ -343,11 +346,11 @@ function getNode(tree, data){
 	const nodeG = (tree.svg).append('g')
 		.attr('transform',`translate(${circleRadius+centerOffset}, ${circleRadius+centerOffset})`);
 	nodeG.append('circle')
-			.attr('fill', '#EFF0F3')
-			.attr('r', circleRadius)
-			.attr('stroke', 'green')
-			.attr('stroke-width', circleStroke);
+			.attr('fill', 'green')
+			.attr('r', circleRadius + circleStroke)
+			.attr('stroke-width', 0)
 	nodeG.append('text')
+		.attr('fill', '#fcfcfc')
 		.attr('y', circleRadius / 4)
 		.append('tspan')
 			.attr('text-anchor','middle')

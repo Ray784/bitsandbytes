@@ -6,12 +6,8 @@ body{
 	background-color: #1B1B1B;
 	color: #fcfcfc;
 	-ms-overflow-style: none; 
-	scrollbar-width: none;
 	padding-left: 1.5vh;
 	cursor: context-menu;
-}
-body::-webkit-scrollbar {
-	display: none;
 }
 @font-face {
 	font-family: Blackout-2am;
@@ -47,6 +43,21 @@ body::-webkit-scrollbar {
 }
 .navTop:focus{
     outline: 0;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EEF5F9; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2F3129; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #272822; 
 }
 
 .navTop{
