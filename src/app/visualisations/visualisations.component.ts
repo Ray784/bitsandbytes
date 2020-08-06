@@ -39,6 +39,19 @@ export class VisualisationsComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		let imgDivs = document.getElementsByClassName('image');
+		for(let i=0; i< imgDivs.length; i++){
+			let height = (imgDivs[i] as HTMLElement).offsetHeight;
+			let img = (imgDivs[i] as HTMLElement).firstChild as HTMLElement;
+			img.onload = function() {
+			 	let imgHeight = img.clientHeight;
+			 	console.log(height, imgHeight, img)
+			 	if(imgHeight < height){
+					let margintop = (height - imgHeight) / 2;
+					img.style.marginTop = margintop+'px';
+				}
+			}
+		}
 	}
 	scrollTop(){
 		window.scrollTo(0, 0);

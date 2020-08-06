@@ -50,29 +50,29 @@ h3{
 }
 
 .menubar{
-	background-color: #fcfcfc;
+    background-color: #fcfcfc;
 }
 
 .menubar a{
-	color: #000;
+    color: #000;
     font-family: IBM-L8, sans-serif;
 }
 
 .menubar div:hover{
-	background-color: #d3d3d3;
-	color: #ee4938;
+    background-color: #d3d3d3;
+    color: #ee4938;
 }
 
 .menubar div:hover a{
-	color: #ee4938;
+    color: #ee4938;
 }
 
 .centered{
-	width: 90vw;
-	padding: 0px;
+    width: 90vw;
+    padding: 0px;
 }
 .centered ul{
-	padding: 0;
+    padding: 0;
 }
 .centered li{
     display: block;
@@ -115,8 +115,8 @@ h3{
 
 .image img{
     width: auto;
-	height: auto;
-	max-width: 100%;
+    height: auto;
+    max-width: 100%;
     vertical-align: middle;
     margin: auto;
     transition: 0.4s;
@@ -127,16 +127,15 @@ h3{
 }
 
 a{
-	text-decoration: none;
-	color: #fcfcfc;
-	transition: 0.4s;
+    text-decoration: none;
+    color: #fcfcfc;
+    transition: 0.4s;
 }
 
 
 .centered li button{
-    width: 400px;
+    width: 90%;
     height: 50px;
-    margin:10px;
     font-size: 0.98em;
     border: 0px; 
     background-color: #3a3a3a;
@@ -145,6 +144,8 @@ a{
     cursor: pointer;
     color: white;
     transition: 0.4s;
+    display: block;
+    margin: 0 auto;
 }
 .centered li button:hover a{
     color: #ee4938;
@@ -164,24 +165,24 @@ a{
 }
 @media only screen and (min-width: 1023px) {
   /*for desktop*/
-	.centered li{
-	    display: flex;
-	    padding: 20px;
-	}
-	.centered li p{
-	    width: 50vw;
+    .centered li{
+        display: flex;
+        padding: 20px;
+    }
+    .centered li p{
+        width: 50vw;
         padding-left: 10px;
-	    margin: 0px 0px 4% 0px;
-	}
-	.centered li h2{
-	    text-align: left;
-	    padding-left: 10px;
-	    margin: 2% 0px 2% 0px;
-	}
-	.centered{
-		width: 80vw;
-		padding: 0px;
-	}
+        margin: 0px 0px 4% 0px;
+    }
+    .centered li h2{
+        text-align: left;
+        padding-left: 10px;
+        margin: 2% 0px 2% 0px;
+    }
+    .centered{
+        width: 80vw;
+        padding: 0px;
+    }
 }
 
 @media only screen and (min-width: 1439px) {

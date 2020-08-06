@@ -134,9 +134,8 @@ a{
 
 
 .centered li button{
-    width: 400px;
+    width: 90%;
     height: 50px;
-    margin:10px;
     font-size: 0.98em;
     border: 0px; 
     background-color: #3a3a3a;
@@ -145,6 +144,8 @@ a{
     cursor: pointer;
     color: white;
     transition: 0.4s;
+    display: block;
+    margin: 0 auto;
 }
 .centered li button:hover a{
     color: #ee4938;

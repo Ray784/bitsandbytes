@@ -74,11 +74,18 @@ a{
 	height: 50vh;
 	border-radius: 2px; 
 	max-width: 90vh;
-	background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+	overflow: auto;
     transition: 0.2s;
+    background-color: #DDDDDB;
 }
+
+.image img{
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	display: block;
+}
+
 .sectionButton{
 	position: relative;
 	overflow: hidden;
