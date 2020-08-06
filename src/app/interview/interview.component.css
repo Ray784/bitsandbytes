@@ -152,6 +152,7 @@ h1{
     border-style: none;
     border-color: initial;
     border-image: initial;
+    border: none;
     padding: 0px 20px;
 }
 .button-holder button:hover{
