@@ -1,0 +1,93 @@
+<div class = "body" *ngIf="!isLoading">
+	<div class="navButton" #navButton (click)="showMenuBar(navButton)">
+		<div></div>
+		<div></div>
+	</div>
+	<div id="menu" class="menubar" style="display: none;">
+		<div><a href = "../">Home</a></div>
+		<div><a>About</a></div>
+		<div><a href="https://www.jntuhceh.ac.in" target="_blank">University</a></div>
+	</div>
+	<div class="section" *ngIf="!currBlog">
+		<h3>Edit or Delete <span class="part2">Blogs</span></h3>
+	</div>
+	<button *ngIf="!editing" class="center"  (click)="newBlog()">write a new blog</button>	
+	<div class="centered" *ngIf="!currBlog && !editing">
+		<ul>
+			<li *ngFor="let blog of blogs" class="center">
+				<div class="image">
+					<span class="helper"></span>
+					<a *ngIf="blog.img"><img [src]="blog.img"></a>
+					<a *ngIf="!blog.img"><img src="assets/ppl.jpg"></a>
+				</div>
+				<div>
+					<h2>{{blog.title}}</h2>
+					<p [innerHTML]="'<small>written by '+blog.author+'. last edited '+time(blog.time_stamp)+'</small><br>'+truncate(blog.body, 20)"></p>
+					<button (click)="setup(blog)"><a>Click to Edit</a></button>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="centered blog-centered" *ngIf="currBlog && !editing">
+		<div class="head">
+			<h2>{{currBlog.title}}</h2>
+			<div style="display: flex;">
+				<div class="image">
+					<span class="helper"></span>
+					<img src="assets/user.png" style="height: 50px; width: 50px;">
+				</div>
+				<div class="author">
+					<p class="subtitle text">{{currBlog.author}}</p>
+					<p class="subtitle text">last edited {{time(currBlog.time_stamp)}}</p>
+				</div>
+			</div>
+		</div>
+		<img *ngIf="currBlog.img" class="head-image" src="assets/{{currBlog.img}}.jpg" width="700px;" height="400px">
+		<p class="text" [innerHTML]="currBlog.body"></p>
+		<p class="text" [innerHTML]="currBlog.footer"></p>
+		<button (click)="edit(currBlog)">Edit</button>
+		<button (click)="delete(currBlog)">Delete</button>
+	</div>
+</div>
+
+<div class = "card" *ngIf="editing">
+	<form [formGroup]="blogEditForm" (ngSubmit)="saveChanges()">
+		<h2>{{edit_type}} Blog</h2>
+		<div class="center">
+			<label class="label">Title (do not use html tags)</label><br>
+			<input required class="text" formControlName="title">
+		</div>
+		
+		<div class="center">
+			<label class="label">Author (do not use html tags)</label><br>
+			<input required class="text" type="text" formControlName="author"> 
+		</div>
+
+		
+		<!--<div class="upload" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'photo');">
+			<label class="label">Blog Image</label><br>
+			<label class="box">
+				<input type="file" (change)="onFile($event, 'photo')"> 
+				<span class="choose">Choose</span>
+		  		<span>{{file ? ' '+file.name : ' drag or drop image'}} </span>     
+			</label>
+		</div> -->
+
+		<div class="center">
+		    <label>Blog Body (html tags allowed)</label><br>
+		    <textarea required formControlName="body" class="text" rows="10"></textarea>
+		</div>
+
+		<div class="center">
+			<label class="label">Footer</label><br>
+			<textarea formControlName="footer" class="text" rows="10"></textarea>
+		</div>
+
+		<button type="submit"color="primary" >Save Changes</button>
+		<button type="button" (click)="back()" >Back</button>
+	</form>
+</div>
+
+<div class="body" *ngIf="isLoading">
+	<img src="assets/load.svg" style="height: 90vh; width: 90vw;">
+</div>

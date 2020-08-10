@@ -1,0 +1,19 @@
+<br>
+<br>
+<div class = "card center-screen">
+	<div class="error-card" *ngIf="loginStatusExist">{{loginStatus}}</div>
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+		<h2>Admin login</h2>
+		<div class="center">
+			<label class="label">Username: </label>
+			<input class="text" formControlName="username">
+		</div>
+		
+		<div class="center">
+			<label class="label">Password: </label>
+			<input class="text" type="password" formControlName="password"> 
+		</div>
+
+		<button type="submit" color="primary">Login</button>
+	</form>
+</div>

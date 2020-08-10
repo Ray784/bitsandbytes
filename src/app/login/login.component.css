@@ -1,0 +1,88 @@
+.label{
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 400;
+	font-size: 0.75rem;
+	margin: 0;
+	width: 30%;
+	color: #1b1b1b;
+}
+
+.error-card{
+	width: 70%;
+	background-color: #F8D7DA;
+	color: red;
+	border-radius: 0.25rem; 
+	padding: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.card{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	max-width: 500px;
+	padding: 50px;
+	max-height: 500px;
+	background-color: #F1F0FF;
+    color: rgba(0,0,0,.65);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px 0px;
+    border-radius: 10px;
+}
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h2{
+	text-align: center;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 400;
+	line-height: 1.2;
+	color: black;
+}
+
+input{
+	border-radius: 5px;
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid #3a3a3a;
+}
+
+input:hover{
+	border: 1px solid rgb(255, 122, 89);;
+}
+
+button{
+    background-color: rgb(255, 122, 89);
+    color: #fcfcfc;
+    margin: 10px;
+    margin-left: 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 10px 20px;
+}
+
+.center{
+	display: block;
+	margin: 0 auto;
+}
+
+

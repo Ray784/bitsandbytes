@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,9 @@ import { InterviewComponent } from './interview/interview.component';
 import { GateComponent } from './gate/gate.component';
 import { BlogComponent } from './blog/blog.component';
 import { VisualisationsComponent } from './visualisations/visualisations.component';
+import { AddBlogComponent } from './add-blog/add-blog.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -18,11 +23,15 @@ import { VisualisationsComponent } from './visualisations/visualisations.compone
     InterviewComponent,
     GateComponent,
     BlogComponent,
-    VisualisationsComponent
+    VisualisationsComponent,
+    AddBlogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

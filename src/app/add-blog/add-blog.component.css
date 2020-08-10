@@ -145,11 +145,6 @@ h3{
     opacity: 0.6;
 }
 
-.center{
-    display: block;
-    margin: auto;
-}
-
 a{
     text-decoration: none;
     color: #fcfcfc;
@@ -175,17 +170,19 @@ button{
     border: 0px; 
     background-color: #3a3a3a;
     border-radius: 5px;
-    font-family: Ubuntu, sans-serif;
-    font-weight: 400;
     cursor: pointer;
     color: white;
     transition: 0.4s;
     margin-right: 20px; 
 }
+button a{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
 button:hover a{
     color: #ee4938;
     font-size: 1.3em;
-
 }
 
 .centered li button{
@@ -205,6 +202,71 @@ button:hover a{
 
 .blog-centered{
     width: 90vw;
+}
+
+.card{
+    font-family: Ubuntu, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    max-width: 80%;
+    margin-top: 5%;
+    padding: 50px;
+    background-color: #F1F0FF;
+    color: rgba(0,0,0,.65);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px 0px;
+    border-radius: 10px;
+}
+
+input,textarea{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #3a3a3a;
+    width: 90%;
+
+}
+
+input:hover, textarea:hover{
+    border: 1px solid rgb(255, 122, 89);
+}
+
+.center{
+    display: block;
+    margin: 0 auto;
+}
+
+.upload{
+    width: 90%;
+}
+
+.box{
+    display: block;
+    margin: 5px;
+    padding: 10px;
+    padding-left: 0px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 100%;
+
+}
+.upload input[type="file"] {
+    position:absolute;
+    top: -1000px;
+}
+
+.choose{
+    padding: 10px;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+
+.choose:hover{
+    background-color: #1b1b1b;
 }
 
 @media only screen and (min-width: 767px) {

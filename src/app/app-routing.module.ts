@@ -6,8 +6,8 @@ import {InterviewComponent} from './interview/interview.component';
 import {GateComponent} from './gate/gate.component';
 import {BlogComponent} from './blog/blog.component';
 import {VisualisationsComponent} from './visualisations/visualisations.component';
-
-
+import {LoginComponent} from './login/login.component';
+import {AddBlogComponent} from './add-blog/add-blog.component';
 
 
 const routes: Routes = [
@@ -17,6 +17,8 @@ const routes: Routes = [
 	{ path: 'gate', component: GateComponent },
 	{ path: 'blog', component: BlogComponent },
 	{ path: 'ds-visuals', component: VisualisationsComponent },
+	{ path: 'log-kWZr1n0-in', component: LoginComponent },
+	{ path: 'add-jFZ2pW6-blog', component: AddBlogComponent },
 ];
 
 @NgModule({

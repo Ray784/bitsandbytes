@@ -1,35 +1,53 @@
-<div class = "body">
+<div class = "body" *ngIf="!isLoading">
 	<div class="navButton" #navButton (click)="showMenuBar(navButton)">
 		<div></div>
 		<div></div>
 	</div>
 	<div id="menu" class="menubar" style="display: none;">
-		<div><a routerLink = "../">Home</a></div>
+		<div><a href = "../">Home</a></div>
 		<div><a>About</a></div>
 		<div><a href="https://www.jntuhceh.ac.in" target="_blank">University</a></div>
 	</div>
-	<div class="section">
-		<h3>Find notes to help you with <br><span class="part2">Gate and Interview preparation</span></h3>
+	<div class="section" *ngIf="!currBlog">
+		<h3>Tips and other information <br><span class="part2">from Seniors and Lecturers</span></h3>
 	</div>
-	<div class="centered">
+	<div class="centered" *ngIf="!currBlog">
 		<ul>
-			<li>
+			<li *ngFor="let blog of blogs">
 				<div class="image">
 					<span class="helper"></span>
 					<a><img src="assets/ppl.jpg"></a>
 				</div>
 				<div>
-					<h2>Principles of Programming Languages</h2>
-					<p>A programming language is a notation for writing programs which are specifications of a computation or an algorithm. Principles of programming languages is an important topic for GATE as well as for interviews. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<button><a href="#">Click here for notes</a></button>
+					<h2>{{blog.title}}</h2>
+					<p [innerHTML]="'<small>written by '+blog.author+'. last edited '+time(blog.time_stamp)+'</small><br>'+truncate(blog.body, 20)"></p>
+					<button (click)="setup(blog)"><a>Click to Read</a></button>
 				</div>
 			</li>
-			<li></li>
 		</ul>
 	</div>
+	<div class="centered blog-centered" *ngIf="currBlog">
+		<div class="head">
+			<h2>{{currBlog.title}}</h2>
+			<div style="display: flex;">
+				<div class="image">
+					<span class="helper"></span>
+					<img src="assets/user.png" style="height: 50px; width: 50px;">
+				</div>
+				<div class="author">
+					<p class="subtitle text">{{currBlog.author}}</p>
+					<p class="subtitle text">last edited {{time(currBlog.time_stamp)}}</p>
+				</div>
+			</div>
+		</div>
+		<img *ngIf="!currBlog.img" class="head-image center" src="assets/oracle.jpg" width="700px;" height="400px">
+		<img *ngIf="currBlog.img" class="head-image center" [src]="currBlog.img" width="700px;" height="400px">
+		<p class="text" [innerHTML]="currBlog.body"></p>
+		<p class="text" [innerHTML]="currBlog.footer"></p>
+		<button (click)="back()">Back</button>		
+	</div>
+</div>
+
+<div class="body" *ngIf="isLoading">
+	<img src="assets/load.svg" style="height: 90vh; width: 90vw;">
 </div>

@@ -46,6 +46,7 @@ h1{
 .menubar a{
   color: #3a3a3a;
   font-family: Ubuntu, sans-serif;
+  font-weight: 500;
 }
 
 .menubar div:hover{

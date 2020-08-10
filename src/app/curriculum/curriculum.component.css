@@ -6,6 +6,7 @@ body::-webkit-scrollbar {
 	display: block;
 	width: 90vw;
     font-family: Ubuntu, sans-serif;
+    font-weight: 500;
     text-transform: uppercase;
     transition: ease 0.1s;
     z-index: 10;
@@ -45,7 +46,8 @@ h1{
 
 .menubar a{
   color: #3a3a3a;
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
 }
 
 .menubar div:hover{
