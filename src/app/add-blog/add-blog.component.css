@@ -154,7 +154,7 @@ a{
 }
 
 .head{
-    display: block; margin: auto; max-width: 50vw;
+    display: block; margin: auto; max-width: 90vw;
 }
 
 .author{
@@ -315,6 +315,9 @@ input:hover, textarea:hover{
     }
     .blog-centered{
         width: 60vw;
+    }
+    .head{
+        max-width: 50vw; 
     }
 }
 
