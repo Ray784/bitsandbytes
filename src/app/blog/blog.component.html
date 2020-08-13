@@ -16,7 +16,8 @@
 			<li *ngFor="let blog of blogs">
 				<div class="image">
 					<span class="helper"></span>
-					<a><img src="assets/ppl.jpg"></a>
+					<a *ngIf="blog.image"><img src="assets/blog/{{blog.image}}.png"></a>
+					<a *ngIf="!blog.image"><img src="assets/ppl.jpg"></a>
 				</div>
 				<div>
 					<h2>{{blog.title}}</h2>
@@ -40,8 +41,8 @@
 				</div>
 			</div>
 		</div>
-		<img *ngIf="!currBlog.img" class="head-image center" src="assets/oracle.jpg" width="700px;" height="400px">
-		<img *ngIf="currBlog.img" class="head-image center" [src]="currBlog.img" width="700px;" height="400px">
+		<img *ngIf="!currBlog.image" class="head-image center" src="assets/ppl.jpg">
+		<img *ngIf="currBlog.image" class="head-image center" src="assets/blog/{{currBlog.image}}.png">
 		<p class="text" [innerHTML]="currBlog.body"></p>
 		<p class="text" [innerHTML]="currBlog.footer"></p>
 		<button (click)="back()">Back</button>		

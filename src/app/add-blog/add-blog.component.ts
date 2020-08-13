@@ -21,6 +21,7 @@ export class AddBlogComponent implements OnInit {
 		this.scrollTop();
    }
   blogs: Blog[];
+  images;
   isLoading: boolean = true;
   edit_type: string = "Edit";
   editing: boolean = false;
@@ -31,6 +32,11 @@ export class AddBlogComponent implements OnInit {
   ngOnInit(): void {
   	this.blogService.getBlog().subscribe(blogs=>{
   		this.blogs = blogs['blogs'].slice().reverse();
+      this.images = blogs['images'].sort(function(a, b){
+          if(a.data < b.data) { return -1; }
+          if(a.data > b.data) { return 1; }
+          return 0;
+      });
   		this.isLoading = false;
   	});
   	this.blogEditForm = new FormGroup({
@@ -51,8 +57,10 @@ export class AddBlogComponent implements OnInit {
   		this.blogEditForm.get('title').setValue(blog.title);
   		this.blogEditForm.get('author').setValue(blog.author);
   		this.blogEditForm.get('footer').setValue(blog.footer);
-  		this.blogEditForm.get('body').setValue(blog.body);
+      this.blogEditForm.get('body').setValue(blog.body);
+  		this.blogEditForm.get('image').setValue(blog.image);
   		this.blogEditForm.get('time_stamp').setValue(blog.time_stamp);
+      this.scrollTop();
   }
 
   delete(blog):void {
@@ -70,6 +78,7 @@ export class AddBlogComponent implements OnInit {
   	}
   	else
   		console.log("not deleted");
+    this.scrollTop();
   }
 
   time(time_stamp){
@@ -84,6 +93,7 @@ export class AddBlogComponent implements OnInit {
 
   setup(blog){
   	this.currBlog = blog;
+    console.log(this.currBlog);
     this.scrollTop();
   }
 
@@ -92,6 +102,7 @@ export class AddBlogComponent implements OnInit {
   		this.blogEditForm.get('author').setValue('');
   		this.blogEditForm.get('footer').setValue('');
   		this.blogEditForm.get('body').setValue('');
+      this.blogEditForm.get('image').setValue('');
   		this.blogEditForm.get('time_stamp').setValue('-1');
   }
 
@@ -109,7 +120,7 @@ export class AddBlogComponent implements OnInit {
   	this.http.post(this.editUrl, {time_stamp: time_stamp, blog: JSON.stringify(blog)}).subscribe((responseData)=>{
   		this.resetForm();
 	  	this.blogService.getBlog().subscribe(blogs=>{
-	  		this.blogs = blogs['blogs'].slice().reverse();;
+	  		this.blogs = blogs['blogs'].slice().reverse();
 	  		this.isLoading = false;
 	  	});
   	});
@@ -130,5 +141,13 @@ export class AddBlogComponent implements OnInit {
   back(){
       this.editing = false;
       this.currBlog = undefined;
+  }
+
+  otherImage: boolean = false;
+  setupOthers(){
+    if(this.blogEditForm.get('image').value == 'Others')
+      this.otherImage = true;
+    else
+      this.otherImage = false;
   }
 }

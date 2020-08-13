@@ -17,8 +17,8 @@
 			<li *ngFor="let blog of blogs" class="center">
 				<div class="image">
 					<span class="helper"></span>
-					<a *ngIf="blog.img"><img [src]="blog.img"></a>
-					<a *ngIf="!blog.img"><img src="assets/ppl.jpg"></a>
+					<a *ngIf="blog.image"><img src="assets/blog/{{blog.image}}.png"></a>
+					<a *ngIf="!blog.image"><img src="assets/ppl.jpg"></a>
 				</div>
 				<div>
 					<h2>{{blog.title}}</h2>
@@ -42,11 +42,12 @@
 				</div>
 			</div>
 		</div>
-		<img *ngIf="currBlog.img" class="head-image" src="assets/{{currBlog.img}}.jpg" width="700px;" height="400px">
+		<img *ngIf="currBlog.image" class="head-image" src="assets/blog/{{currBlog.image}}.png">
 		<p class="text" [innerHTML]="currBlog.body"></p>
 		<p class="text" [innerHTML]="currBlog.footer"></p>
 		<button (click)="edit(currBlog)">Edit</button>
 		<button (click)="delete(currBlog)">Delete</button>
+		<button (click)="back()">Back</button>
 	</div>
 </div>
 
@@ -72,6 +73,19 @@
 		  		<span>{{file ? ' '+file.name : ' drag or drop image'}} </span>     
 			</label>
 		</div> -->
+		<div class="center">
+		    <label>Blog Image</label><br>
+		    <select formControlName="image" class="text" (change)="setupOthers()">
+		    	<option>-</option>
+		    	<option *ngFor="let img of images" [selected]="blogEditForm.get('image').value == img.data? true: false">{{img.data}}</option>
+		    	<option>Others</option>
+		    </select>
+		    <div *ngIf="otherImage">
+			    <label>Paste a link here</label><br>
+			    <input required  placeholder="paste a link here" class="text" type="text" formControlName="image"> 
+			</div>
+		</div>
+
 
 		<div class="center">
 		    <label>Blog Body (html tags allowed)</label><br>

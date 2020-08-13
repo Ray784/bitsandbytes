@@ -1,6 +1,6 @@
 export class Blog{
     title: string;
-    img: string;
+    image: string;
     body: string;
     footer?: string;
     author: string = 'Anonymous';

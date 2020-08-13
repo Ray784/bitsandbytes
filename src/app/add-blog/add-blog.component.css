@@ -119,11 +119,11 @@ h3{
 
 .centered li .image{
     height: auto;
+    display: block;
+    margin: 0 auto;
     margin-right: 2%;
     cursor: pointer;
     text-align: center;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .helper {
@@ -135,7 +135,9 @@ h3{
 .image img{
     width: auto;
     height: auto;
+    object-fit: cover;
     max-width: 100%;
+    max-height: 300px;
     vertical-align: middle;
     margin: auto;
     transition: 0.4s;
@@ -159,8 +161,11 @@ a{
     margin-top: 15px;
 }
 
-.head-img{
-    width: 50vw; display: block; margin: auto;
+.head-image{
+    width: 100%; 
+    object-fit: cover;
+    display: block; 
+    margin: auto;
 }
 
 button{
@@ -218,13 +223,21 @@ button:hover a{
     border-radius: 10px;
 }
 
-input,textarea{
+input,textarea, select{
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
     border: 1px solid #3a3a3a;
     width: 90%;
+}
 
+select{
+    width: 40%;
+}
+
+option{
+    padding: 10px;
+    font-size: 1em;
 }
 
 input:hover, textarea:hover{
