@@ -8,45 +8,24 @@
 		<div><a>About</a></div>
 		<div><a href="https://www.jntuhceh.ac.in" target="_blank">University</a></div>
 	</div>
-	<div class="section" *ngIf="!currBlog">
+	<div class="section">
 		<h3>Tips and other information <br><span class="part2">from Seniors and Lecturers</span></h3>
 	</div>
-	<div class="centered" *ngIf="!currBlog">
-		<ul>
-			<li *ngFor="let blog of blogs">
-				<div class="image">
-					<span class="helper"></span>
-					<a *ngIf="blog.image"><img src="assets/blog/{{blog.image}}.png"></a>
-					<a *ngIf="!blog.image"><img src="assets/ppl.jpg"></a>
-				</div>
-				<div>
-					<h2>{{blog.title}}</h2>
-					<p [innerHTML]="'<small>written by '+blog.author+'. last edited '+time(blog.time_stamp)+'</small><br>'+truncate(blog.body, 20)"></p>
-					<button (click)="setup(blog)"><a>Click to Read</a></button>
-				</div>
-			</li>
-		</ul>
-	</div>
-	<div class="centered blog-centered" *ngIf="currBlog">
-		<div class="head">
-			<h2>{{currBlog.title}}</h2>
-			<div style="display: flex;">
-				<div class="image">
-					<span class="helper"></span>
-					<img src="assets/user.png" style="height: 50px; width: 50px;">
-				</div>
-				<div class="author">
-					<p class="subtitle text">{{currBlog.author}}</p>
-					<p class="subtitle text">last edited {{time(currBlog.time_stamp)}}</p>
-				</div>
+	<ul>
+		<li class="article" *ngFor="let blog of blogs" (click)="setup(blog._id)">
+			<div class="vertical-center">
+				<span class="helper"></span>
+				<a *ngIf="blog.image"><img src="assets/blog/{{blog.image}}.png"></a>
+				<a *ngIf="!blog.image"><img src="assets/ppl.jpg"></a>
 			</div>
-		</div>
-		<img *ngIf="!currBlog.image" class="head-image center" src="assets/ppl.jpg">
-		<img *ngIf="currBlog.image" class="head-image center" src="assets/blog/{{currBlog.image}}.png">
-		<p class="text" [innerHTML]="currBlog.body"></p>
-		<p class="text" [innerHTML]="currBlog.footer"></p>
-		<button (click)="back()">Back</button>		
-	</div>
+			<div>
+				<h2>{{blog.title}}</h2>
+				<p [innerHTML]="truncate(blog.body, 20)"></p>
+				<small class="author">{{blog.author}}</small>
+				<p><small class="date">{{time(blog.time_stamp)[0]}}</small> <small>{{readTime(blog.body)}} mins read</small></p>
+			</div> 
+		</li>
+	</ul>
 </div>
 
 <div class="body" *ngIf="isLoading">

@@ -30,7 +30,7 @@ export class AddBlogComponent implements OnInit {
   private editUrl:string = "https://major-app.herokuapp.com/setBlog";
 
   ngOnInit(): void {
-  	this.blogService.getBlog().subscribe(blogs=>{
+  	this.blogService.getBlogs().subscribe(blogs=>{
   		this.blogs = blogs['blogs'].slice().reverse();
       this.images = blogs['images'].sort(function(a, b){
           if(a.data < b.data) { return -1; }
@@ -68,7 +68,7 @@ export class AddBlogComponent implements OnInit {
   	if(confirmed == true){
   		this.http.post(this.editUrl, {time_stamp: blog.time_stamp, blog: "-1"}).subscribe((responseData)=>{
 	  		this.resetForm();
-		  	this.blogService.getBlog().subscribe(blogs=>{
+		  	this.blogService.getBlogs().subscribe(blogs=>{
 		  		this.blogs = blogs['blogs'].slice().reverse();;
 		  		this.isLoading = false;
 		  	});
@@ -119,7 +119,7 @@ export class AddBlogComponent implements OnInit {
     this.isLoading = true;
   	this.http.post(this.editUrl, {time_stamp: time_stamp, blog: JSON.stringify(blog)}).subscribe((responseData)=>{
   		this.resetForm();
-	  	this.blogService.getBlog().subscribe(blogs=>{
+	  	this.blogService.getBlogs().subscribe(blogs=>{
 	  		this.blogs = blogs['blogs'].slice().reverse();
 	  		this.isLoading = false;
 	  	});

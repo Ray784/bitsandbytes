@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Blog} from '../blog';
 import {BlogService} from '../blog.service';
 import { HttpEvent, HttpResponse} from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-blog',
@@ -9,38 +11,40 @@ import { HttpEvent, HttpResponse} from '@angular/common/http';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-
-  constructor(private blogService : BlogService){
+  constructor(private blogService : BlogService, private route: ActivatedRoute, private router:Router){
   	let body = document.getElementsByTagName('body');	
 		body[0].style.backgroundColor = "#fcfcfc";
 		body[0].style.color = "#3a3a3a";
 		this.scrollTop();
   }
   blogs: Blog[];
-  currBlog: Blog;
   isLoading: boolean = true;
 
   ngOnInit(): void {
-  	this.blogService.getBlog().subscribe(blogs=>{
-  		this.blogs = blogs['blogs'].slice().reverse();
+  	this.blogService.getBlogs().subscribe(blogs=>{
+  		this.blogs = blogs.slice().reverse();
   		this.isLoading = false;
   	});
-  	console.log(this.blogs)
   }
   time(time_stamp){
     let dateObj = new Date(parseInt(time_stamp) + 330 * 60000); 
+    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    let date = dateObj.getDate() + ' ' + months[dateObj.getMonth()] + ' ' + dateObj.getUTCFullYear();
     let utcString = dateObj.toUTCString();
-    return utcString.slice(0, -4)+" IST";
+    return [date, utcString.slice(0, -4)+" IST"];
   }
   truncate(str, num) {
-  	return str.split(" ").splice(0, num).join(" ") + "...";
+    let div = document.createElement('div');
+    div.innerHTML = str;
+  	return div.innerText.split(" ").splice(0, num).join(" ") + "...";
   }
-  setup(blog){
-  	this.currBlog = blog;
-    this.scrollTop();
+  readTime(str){
+    let div = document.createElement('div');
+    div.innerHTML = str;
+    return Math.round((div.innerText.split(' ').length * 400) / 60000) + 1;
   }
-  back(){
-  	this.currBlog = undefined;
+  setup(id){
+    this.router.navigate(['/blog', id]);
   }
   showMenuBar(nav){
 		nav.classList.toggle("rotate");

@@ -1,0 +1,24 @@
+<div class="centered blog-centered" *ngIf="!isLoading">
+	<div class="head">
+		<h1>{{blog.title}}</h1>
+		<div style="display: flex;">
+			<div class="image">
+				<span class="helper"></span>
+				<img src="assets/user.png" style="height: 50px; width: 50px;">
+			</div>
+			<div class="author">
+				<p class="subtitle text">{{blog.author}}</p>
+				<p class="subtitle text">last edited {{time(blog.time_stamp)}}</p>
+			</div>
+		</div>
+	</div>
+	<img *ngIf="!blog.image" class="head-image center" src="assets/ppl.jpg">
+	<img *ngIf="blog.image" class="head-image center" src="assets/blog/{{blog.image}}.png">
+	<p class="text" [innerHTML]="blog.body"></p>
+	<p class="text" [innerHTML]="blog.footer"></p>
+	<button (click)="back()">Read More Blogs</button>		
+</div>
+
+<div class="body" *ngIf="isLoading">
+	<img src="assets/load.svg" style="height: 90vh; width: 90vw;">
+</div>

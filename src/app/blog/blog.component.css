@@ -14,45 +14,14 @@
     margin: auto;
 }
 
+ul{
+    margin: 0px;
+    padding: 0px;
+}
 h3{
     margin-top: 15vh;
     font-size: 2em;
     margin-bottom: 5vh;
-}
-
-.text{
-    font-family: Geneva, sans-serif;
-    font-weight: 400;
-    line-height: 1.2;
-    font-size: 1em;
-    color: black;
-    margin: 0.75rem;
-}
-
-.title {
-    font-size: 1.75rem;
-    line-height: 22px;
-}
-
-.subtitle {
-    margin-top: -0.375rem;
-    font-size: 0.875rem;
-    line-height: 16px;
-    color: #455a64;
- }
-.centered{
-    font-family: IBM Plex Sans, sans-serif;
-    font-weight: 300;
-    transition: ease 0.1s;
-    width: 90vw;
-    z-index: 10;
-    overflow: hidden;
-    padding-bottom: 15vh;
-    margin: auto;
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
 }
 
 .part2{
@@ -88,66 +57,6 @@ h3{
 
 .menubar div:hover a{
     color: #ee4938;
-}
-
-.centered ul{
-    padding: 0;
-}
-.centered li{
-    display: block;
-    border-top: 1.5px solid #d3d3d3;
-    padding: 10px;
-    list-style: none;
-}
-
-.centered li p{
-    font-family: Geneva, sans-serif;
-    color: #757575;
-    text-align: justify;
-    width: 81vw;
-    padding-left: 5%;
-    margin: 0px 0px 8% 0px;
-    font-size: 1em;
-    font-style: bold;
-
-}
-.centered li h2{
-    text-align: left;
-    padding-left: 5%;
-    margin: 8% 0px 0 0px;
-}
-
-.centered li .image{
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    margin-right: 2%;
-    cursor: pointer;
-    text-align: center;
-}
-
-.helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-
-.image img{
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    max-width: 100%;
-    vertical-align: middle;
-    transition: 0.4s;
-}
-
-.image a:hover img{
-    opacity: 0.6;
-}
-
-.center{
-    display: block;
-    margin: auto;
 }
 
 a{
@@ -191,23 +100,77 @@ button:hover a{
 
 }
 
-.centered li button{
-    width: 90%;
+
+.article{
+    width: 80vw;
+    height: auto;
     display: block;
-    margin: 0 auto;
+    margin: auto;
+    margin-bottom: 0px;
+    padding: 20px;
+    font-family: Ubuntu;
+    background-color: #f2f2f2;
+    text-decoration: none;
+    color: black;
+    transition: 1s;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+.article h2{
+    margin-bottom: 5px;
+}
+.article p{
+    color: #757575;
+    margin-top: 2px;
+    font-size: 1em;
 }
 
-.center-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 90%;
+.vertical-center{
+    display: block;
+    margin: auto;
 }
 
-.blog-centered{
-    width: 90vw;
+.article img{
+    width: 100%;
+    height: 100%;
+    max-width: 150px; 
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+.article div{
+    display: block;
+    padding: 10px;
+}
+
+.article div:nth-child(2){
+    width: 100%;
+}
+
+.article:hover{
+    opacity: 0.5;
+}
+
+.author{
+    color: black;
+}
+
+.date{
+    position: relative;
+    margin-right: 15px; 
+}
+.date::after{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 0;
+    right: -15px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: black;
 }
 
 @media only screen and (min-width: 767px) {
@@ -220,40 +183,26 @@ button:hover a{
         font-size: 4em;
         
     }
+
+    .article{
+        display: flex;
+        width: 60vw;
+    }
+
+    .vertical-center{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    }
+
+    .article div:nth-child(2){
+        width: 70%;
+    }
 }
 @media only screen and (min-width: 1023px) {
   /*for desktop*/
   .head{
     max-width: 50vw;
   }
-    .centered li{
-        display: flex;
-        padding: 20px;
-    }
-    .centered li p{
-        width: 50vw;
-        padding-left: 10px;
-        margin: 0px 0px 4% 0px;
-    }
-    .centered li h2{
-        text-align: left;
-        padding-left: 10px;
-        margin: 2% 0px 2% 0px;
-    }
-    .centered{
-        width: 80vw;
-        padding: 0px;
-    }
-    .blog-centered{
-        width: 60vw;
-    }
-}
-
-
-
-@media only screen and (min-width: 1439px) {
-  /*for desktop*/
-    .centered li p{
-        font-size: 1.1em;
-    }
 }

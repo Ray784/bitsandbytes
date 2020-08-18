@@ -13,6 +13,7 @@ import { BlogComponent } from './blog/blog.component';
 import { VisualisationsComponent } from './visualisations/visualisations.component';
 import { AddBlogComponent } from './add-blog/add-blog.component';
 import { LoginComponent } from './login/login.component';
+import { ReadBlogComponent } from './read-blog/read-blog.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LoginComponent } from './login/login.component';
     BlogComponent,
     VisualisationsComponent,
     AddBlogComponent,
-    LoginComponent
+    LoginComponent,
+    ReadBlogComponent
   ],
   imports: [
     BrowserModule,
