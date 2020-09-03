@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const session = require('express-session');
 const mongoose = require('mongoose');
-
+var ObjectID = require('mongodb').ObjectID; 
 const app = express()
 app.use(bodyParser.json());
 app.use(express.json());
@@ -16,7 +16,8 @@ var uri = "mongodb://bhat_784:VxXSK1vPQLWbLx1u@blogcluster-shard-00-00-qrfqp.mon
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 var blogModel = mongoose.model(
 	'Blogs', 
-	new mongoose.Schema({ 
+	new mongoose.Schema({
+		_id: ObjectID, 
 	    title: String,
 	    image: String,
 	    body: String,
@@ -25,6 +26,12 @@ var blogModel = mongoose.model(
 	    time_stamp: String
 	}), 'Blogs');
 
+var imageModel = mongoose.model(
+	'Images', 
+	new mongoose.Schema({ 
+	    data: String
+	}), 'Images');
+
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/bnb'));
 
@@ -32,8 +39,12 @@ app.get("/getBlog", (req, res) => {
 	blogModel.find(function(error, result) { 
 		if(error)
   			res.status(500).json(error);
-  		else
-  			res.status(200).json(result);
+  		else{
+  			imageModel.find(function(error, images) { 
+  				if(!error)
+  					res.status(200).json({'blogs': result, 'images': images});
+  			});
+  		}
 	 });
 });
 
@@ -46,24 +57,68 @@ app.get("/getBlog/:id", (req, res) => {
 	 });
 });
 
-app.post("/setBlog", (req, res) => {
-	let id = req.body.id;
-	let blog = req.body.blog;
-	if(id != -1)
-		blogModel.findByIdAndUpdate({id},blog, function(err, result){
-	        if(err){
-	            res.status(500).json(err);
-	        }
-	        else{
-	            res.status(500).json(result);
-	        }
-	    });
-	else if(blog != -1){
+/*app.post("/setBlog", (req, res) => {
+	let blog = req.body.blog
+	if(blog != '-1'){
+		if(blog._id = '-1')
+			delete blog._id
 		newBlog = new blogModel(blog);
-		newBlog.save();
+		newBlog.save()
+			.then(()=>{
+				res.status(200).json('success');
+			})
+			.catch((err)=>{
+				res.status(500).json(err);
+			});
+	}
+	else{
+		let id = req.body.id;
+		blogModel.deleteOne({ _id: id })
+			.then(()=>{
+				res.status(200).json('success');
+			})
+			.catch((err)=>{
+				res.status(500).json(err);
+			});
+	}
+	res.status(500).json('error');
+});*/
+
+app.get('/setBlog', function(req, res){
+	//let blog = req.body.blog
+	let blog = {
+		'title':"Test update mama",
+		'author':"Ty",
+		'footer':"",
+		'body':"paparapeya",
+		'time_stamp':"1597282876708",
+		'image':"Oracle"
+	}
+	id: ObjectId('5f3ddea671e4fa3658d40169');
+	if(blog != '-1'){
+		if(id == '-1'){
+			newBlog = new blogModel(blog);
+			newBlog.save()
+			.then(()=>{
+				res.status(200).json('success');
+			})
+			.catch((err)=>{
+				res.status(500).json(err);
+			});
+		}
+		else{
+			console.log(blog);
+			blogModel.findOneAndUpdate({_id: ObjectID("5db6b26730f133b65dbbe459")} , newBlog, function(err, result){
+		        if(err){
+		            res.send(err)
+		        }
+		        else{
+		            res.send(result)
+		        }
+		    });
+		}
 	}
 });
-
 app.get('/*', function(req,res) {
     
 res.sendFile(path.join(__dirname+'/dist/bnb/index.html'));

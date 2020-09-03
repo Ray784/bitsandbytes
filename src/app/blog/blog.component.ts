@@ -22,7 +22,7 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
   	this.blogService.getBlogs().subscribe(blogs=>{
-  		this.blogs = blogs.slice().reverse();
+  		this.blogs = blogs['blogs'].slice().reverse();
   		this.isLoading = false;
   	});
   }

@@ -1,5 +1,6 @@
 export class Blog{
     title: string;
+    _id: string = '-1';
     image: string;
     body: string;
     footer?: string;

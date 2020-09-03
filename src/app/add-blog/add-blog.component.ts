@@ -27,7 +27,7 @@ export class AddBlogComponent implements OnInit {
   editing: boolean = false;
   blogEditForm;
   file: File;
-  private editUrl:string = "https://major-app.herokuapp.com/setBlog";
+  private editUrl:string = "http://localhost:8080/setBlog";
 
   ngOnInit(): void {
   	this.blogService.getBlogs().subscribe(blogs=>{
@@ -40,6 +40,7 @@ export class AddBlogComponent implements OnInit {
   		this.isLoading = false;
   	});
   	this.blogEditForm = new FormGroup({
+      _id: new FormControl('-1'),
       title: new FormControl(''),
       author: new FormControl(''),
       footer: new FormControl(''),
@@ -54,6 +55,7 @@ export class AddBlogComponent implements OnInit {
   edit(blog):void {
   		this.editing = true;
   		this.edit_type = "Edit";
+      this.blogEditForm.get('_id').setValue(blog._id);
   		this.blogEditForm.get('title').setValue(blog.title);
   		this.blogEditForm.get('author').setValue(blog.author);
   		this.blogEditForm.get('footer').setValue(blog.footer);
@@ -66,7 +68,7 @@ export class AddBlogComponent implements OnInit {
   delete(blog):void {
   	let confirmed = confirm('Are you sure you want to delete the selected blog?');
   	if(confirmed == true){
-  		this.http.post(this.editUrl, {time_stamp: blog.time_stamp, blog: "-1"}).subscribe((responseData)=>{
+  		this.http.post(this.editUrl, {id: blog._id, blog: "-1"}).subscribe((responseData)=>{
 	  		this.resetForm();
 		  	this.blogService.getBlogs().subscribe(blogs=>{
 		  		this.blogs = blogs['blogs'].slice().reverse();;
@@ -83,12 +85,20 @@ export class AddBlogComponent implements OnInit {
 
   time(time_stamp){
     let dateObj = new Date(parseInt(time_stamp) + 330 * 60000); 
+    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    let date = dateObj.getDate() + ' ' + months[dateObj.getMonth()] + ' ' + dateObj.getUTCFullYear();
     let utcString = dateObj.toUTCString();
-    return utcString.slice(0, -4)+" IST";
+    return [date, utcString.slice(0, -4)+" IST"];
   }
-
-   truncate(str, num) {
-  	return str.split(" ").splice(0, num).join(" ") + "...";
+  truncate(str, num) {
+    let div = document.createElement('div');
+    div.innerHTML = str;
+    return div.innerText.split(" ").splice(0, num).join(" ") + "...";
+  }
+  readTime(str){
+    let div = document.createElement('div');
+    div.innerHTML = str;
+    return Math.round((div.innerText.split(' ').length * 400) / 60000) + 1;
   }
 
   setup(blog){
@@ -98,6 +108,7 @@ export class AddBlogComponent implements OnInit {
   }
 
   resetForm(){
+      this.blogEditForm.get('_id').setValue('-1');
   		this.blogEditForm.get('title').setValue('');
   		this.blogEditForm.get('author').setValue('');
   		this.blogEditForm.get('footer').setValue('');
@@ -117,7 +128,7 @@ export class AddBlogComponent implements OnInit {
   	let now = new Date();
   	blog['time_stamp'] = ''+now.getTime();
     this.isLoading = true;
-  	this.http.post(this.editUrl, {time_stamp: time_stamp, blog: JSON.stringify(blog)}).subscribe((responseData)=>{
+  	this.http.post(this.editUrl, {blog: JSON.stringify(blog)}).subscribe((responseData)=>{
   		this.resetForm();
 	  	this.blogService.getBlogs().subscribe(blogs=>{
 	  		this.blogs = blogs['blogs'].slice().reverse();

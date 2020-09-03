@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class BlogService {
 
   constructor(private http: HttpClient) { }
-  rootUrl = 'http://localhost:8080';
+  rootUrl = 'https://bitsandbytes2020.herokuapp.com';
   getBlogRoute = '/getBlog';
 
   getBlogs(): Observable<any> {

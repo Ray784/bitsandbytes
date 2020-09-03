@@ -12,19 +12,21 @@
 		<h3>Edit or Delete <span class="part2">Blogs</span></h3>
 	</div>
 	<button *ngIf="!editing" class="center"  (click)="newBlog()">write a new blog</button>	
-	<div class="centered" *ngIf="!currBlog && !editing">
+	<br>
+	<div *ngIf="!currBlog && !editing">
 		<ul>
-			<li *ngFor="let blog of blogs" class="center">
-				<div class="image">
+			<li class="article" *ngFor="let blog of blogs" (click)="setup(blog)">
+				<div class="vertical-center">
 					<span class="helper"></span>
 					<a *ngIf="blog.image"><img src="assets/blog/{{blog.image}}.png"></a>
 					<a *ngIf="!blog.image"><img src="assets/ppl.jpg"></a>
 				</div>
 				<div>
 					<h2>{{blog.title}}</h2>
-					<p [innerHTML]="'<small>written by '+blog.author+'. last edited '+time(blog.time_stamp)+'</small><br>'+truncate(blog.body, 20)"></p>
-					<button (click)="setup(blog)"><a>Click to Edit</a></button>
-				</div>
+					<p [innerHTML]="truncate(blog.body, 20)"></p>
+					<small class="author">{{blog.author}}</small>
+					<p><small class="date">{{time(blog.time_stamp)[0]}}</small> <small>{{readTime(blog.body)}} mins read</small></p>
+				</div> 
 			</li>
 		</ul>
 	</div>
@@ -45,61 +47,63 @@
 		<img *ngIf="currBlog.image" class="head-image" src="assets/blog/{{currBlog.image}}.png">
 		<p class="text" [innerHTML]="currBlog.body"></p>
 		<p class="text" [innerHTML]="currBlog.footer"></p>
-		<button (click)="edit(currBlog)">Edit</button>
-		<button (click)="delete(currBlog)">Delete</button>
-		<button (click)="back()">Back</button>
+		<div class="center">
+			<button (click)="edit(currBlog)">Edit</button>
+			<button (click)="delete(currBlog)">Delete</button>
+			<button (click)="back()">Back</button>
+		</div>
 	</div>
-</div>
 
-<div class = "card" *ngIf="editing">
-	<form [formGroup]="blogEditForm" (ngSubmit)="saveChanges()">
-		<h2>{{edit_type}} Blog</h2>
-		<div class="center">
-			<label class="label">Title (do not use html tags)</label><br>
-			<input required class="text" formControlName="title">
-		</div>
-		
-		<div class="center">
-			<label class="label">Author (do not use html tags)</label><br>
-			<input required class="text" type="text" formControlName="author"> 
-		</div>
-
-		
-		<!--<div class="upload" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'photo');">
-			<label class="label">Blog Image</label><br>
-			<label class="box">
-				<input type="file" (change)="onFile($event, 'photo')"> 
-				<span class="choose">Choose</span>
-		  		<span>{{file ? ' '+file.name : ' drag or drop image'}} </span>     
-			</label>
-		</div> -->
-		<div class="center">
-		    <label>Blog Image</label><br>
-		    <select formControlName="image" class="text" (change)="setupOthers()">
-		    	<option>-</option>
-		    	<option *ngFor="let img of images" [selected]="blogEditForm.get('image').value == img.data? true: false">{{img.data}}</option>
-		    	<option>Others</option>
-		    </select>
-		    <div *ngIf="otherImage">
-			    <label>Paste a link here</label><br>
-			    <input required  placeholder="paste a link here" class="text" type="text" formControlName="image"> 
+	<div class = "card" *ngIf="editing">
+		<form [formGroup]="blogEditForm" (ngSubmit)="saveChanges()">
+			<h2>{{edit_type}} Blog</h2>
+			<div class="center">
+				<label class="label">Title (do not use html tags)</label><br>
+				<input required class="text" formControlName="title">
 			</div>
-		</div>
+			
+			<div class="center">
+				<label class="label">Author (do not use html tags)</label><br>
+				<input required class="text" type="text" formControlName="author"> 
+			</div>
+
+			
+			<!--<div class="upload" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'photo');">
+				<label class="label">Blog Image</label><br>
+				<label class="box">
+					<input type="file" (change)="onFile($event, 'photo')"> 
+					<span class="choose">Choose</span>
+			  		<span>{{file ? ' '+file.name : ' drag or drop image'}} </span>     
+				</label>
+			</div> -->
+			<div class="center">
+			    <label>Blog Image</label><br>
+			    <select formControlName="image" class="text" (change)="setupOthers()">
+			    	<option>-</option>
+			    	<option *ngFor="let img of images" [selected]="blogEditForm.get('image').value == img.data? true: false">{{img.data}}</option>
+			    	<option>Others</option>
+			    </select>
+			    <div *ngIf="otherImage">
+				    <label>Paste a link here</label><br>
+				    <input required  placeholder="paste a link here" class="text" type="text" formControlName="image"> 
+				</div>
+			</div>
 
 
-		<div class="center">
-		    <label>Blog Body (html tags allowed)</label><br>
-		    <textarea required formControlName="body" class="text" rows="10"></textarea>
-		</div>
+			<div class="center">
+			    <label>Blog Body (html tags allowed)</label><br>
+			    <textarea required formControlName="body" class="text" rows="10"></textarea>
+			</div>
 
-		<div class="center">
-			<label class="label">Footer</label><br>
-			<textarea formControlName="footer" class="text" rows="10"></textarea>
-		</div>
+			<div class="center">
+				<label class="label">Footer</label><br>
+				<textarea formControlName="footer" class="text" rows="10"></textarea>
+			</div>
 
-		<button type="submit"color="primary" >Save Changes</button>
-		<button type="button" (click)="back()" >Back</button>
-	</form>
+			<button type="submit"color="primary" >Save Changes</button>
+			<button type="button" (click)="back()" >Back</button>
+		</form>
+	</div>
 </div>
 
 <div class="body" *ngIf="isLoading">
