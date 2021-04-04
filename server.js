@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(cors());
 
-var uri = "mongodb://bhat_784:VxXSK1vPQLWbLx1u@blogcluster-shard-00-00-qrfqp.mongodb.net:27017,blogcluster-shard-00-01-qrfqp.mongodb.net:27017,blogcluster-shard-00-02-qrfqp.mongodb.net:27017/db_76532?ssl=true&replicaSet=BlogCluster-shard-0&authSource=admin&retryWrites=true&w=majority";
+var uri = "mongodb://<url-to-mongo>?ssl=true&replicaSet=BlogCluster-shard-0&authSource=admin&retryWrites=true&w=majority";
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 var blogModel = mongoose.model(
 	'Blogs', 
