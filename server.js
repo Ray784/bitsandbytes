@@ -57,67 +57,8 @@ app.get("/getBlog/:id", (req, res) => {
 	 });
 });
 
-/*app.post("/setBlog", (req, res) => {
-	let blog = req.body.blog
-	if(blog != '-1'){
-		if(blog._id = '-1')
-			delete blog._id
-		newBlog = new blogModel(blog);
-		newBlog.save()
-			.then(()=>{
-				res.status(200).json('success');
-			})
-			.catch((err)=>{
-				res.status(500).json(err);
-			});
-	}
-	else{
-		let id = req.body.id;
-		blogModel.deleteOne({ _id: id })
-			.then(()=>{
-				res.status(200).json('success');
-			})
-			.catch((err)=>{
-				res.status(500).json(err);
-			});
-	}
-	res.status(500).json('error');
-});*/
-
-app.get('/setBlog', function(req, res){
-	//let blog = req.body.blog
-	let blog = {
-		'title':"Test update mama",
-		'author':"Ty",
-		'footer':"",
-		'body':"paparapeya",
-		'time_stamp':"1597282876708",
-		'image':"Oracle"
-	}
-	id: ObjectId('5f3ddea671e4fa3658d40169');
-	if(blog != '-1'){
-		if(id == '-1'){
-			newBlog = new blogModel(blog);
-			newBlog.save()
-			.then(()=>{
-				res.status(200).json('success');
-			})
-			.catch((err)=>{
-				res.status(500).json(err);
-			});
-		}
-		else{
-			console.log(blog);
-			blogModel.findOneAndUpdate({_id: ObjectID("5db6b26730f133b65dbbe459")} , newBlog, function(err, result){
-		        if(err){
-		            res.send(err)
-		        }
-		        else{
-		            res.send(result)
-		        }
-		    });
-		}
-	}
+app.get("/getBlog/:id", (req, res) => {
+ //to-do
 });
 app.get('/*', function(req,res) {
     
